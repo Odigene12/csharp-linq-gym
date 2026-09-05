@@ -81,20 +81,60 @@ Every method folder contains:
 Each category folder has a short README that maps the methods in it, and `docs/LEARNING-PATH.md` proposes an
 order that builds skills progressively.
 
-## Working through it
+## Your workflow
+
+Fork the repo so you have somewhere to push, then clone your fork. Give each attempt its own branch, so a
+later attempt can start clean and you can diff the two:
+
+```bash
+git switch -c attempt-1
+```
+
+**Per method.** Work one folder at a time.
+
+1. Pick the next method. `docs/LEARNING-PATH.md` sequences all 75 so each one builds on the last; plain
+   numeric folder order works too.
+2. **Read that folder's `README.md` before writing anything.** It explains the behaviour the tests then
+   check: deferred or immediate, what happens on an empty sequence, which operator to reach for instead.
+3. Open `<Method>Exercises.cs` and work top to bottom. `Easy_` teaches the basic call, `Medium_` adds
+   overloads and comparers, `Hard_` covers edge cases, laziness and real-world shapes.
+4. Run just that file, and keep going until it is green:
+   ```bash
+   dotnet test --filter "FullyQualifiedName~GroupByExercises"
+   ```
+5. Commit. That makes your answers diffable against a later attempt.
+
+**Per exercise.**
+
+- Read the `// Task:` comment, then read the assertions. The assertions are the specification - where the
+  wording and the assertion disagree, the assertion wins.
+- Look at the declared type to the left of `TODO` (`IEnumerable<Student>`, `int?`,
+  `ILookup<string, Student>`). That is what your expression has to produce, and it is the strongest hint in
+  the file. `TODO` itself is a placeholder that throws `NotImplementedException`, typed `dynamic` only so any
+  expected type compiles; your answer should never contain `dynamic`.
+- Replace `TODO` and run. On a failure, read xUnit's expected-versus-actual before changing anything. The
+  difference usually names the misconception.
+- Once it passes, check the README's "Compare with" list. If a shorter or single-pass operator exists,
+  rewrite it that way. Recognising `MinBy` where you first wrote `OrderBy(...).First()` is the actual skill.
+
+The dataset is small enough to reason about by hand - 20 students, 6 instructors, 4 cohorts, 8 courses, 32
+enrollments, ten numbers, ten words. `docs/DATASET.md` prints all of it. A fresh copy is built for every
+test, so you cannot corrupt it for the next one.
+
+Stuck for more than ten minutes, see [Solutions](#solutions). Want to run a method again later, see
+[Doing it again](#doing-it-again).
+
+**Changing the repo rather than working through it?** Exercises are authored on the `solutions` branch and
+`main` is generated from it, so an edit to an exercise on `main` is overwritten by the next sync.
+`CONTRIBUTING.md` has the flow; `CLAUDE.md` states the same rules for coding agents.
+
+## Running tests
 
 - Run one method: `dotnet test --filter "FullyQualifiedName~GroupByExercises"`.
 - Run one category: `dotnet test --filter "FullyQualifiedName~LinqGym.Sorting"`.
+- Run one exercise: `dotnet test --filter "FullyQualifiedName~GroupByExercises.Easy_01"`.
 - Run everything: `dotnet test` (expect a long red list until you are done).
 - In Visual Studio / Rider, Test Explorer groups by namespace and sorts `Easy_` before `Hard_`.
-
-The dataset is small enough to reason about by hand - 20 students, 6 instructors, 4 cohorts, 8 courses, 32
-enrollments, ten numbers, ten words. `docs/DATASET.md` prints it all. A fresh copy is created for every test,
-so you cannot corrupt it.
-
-`TODO` is a placeholder property that throws `NotImplementedException`; it is typed `dynamic` only so the file
-compiles whatever the expected type. The declared type on the left of each `TODO` (`IEnumerable<Student>`,
-`int?`, `ILookup<string, Student>`) tells you what your expression must produce.
 
 ## Solutions
 
