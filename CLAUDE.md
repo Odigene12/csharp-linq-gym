@@ -17,6 +17,12 @@ other than throw `NotImplementedException`.
 
 A red `dotnet test` on `main` is the correct state, not a problem to fix.
 
+**Solving exercises belongs on a practice branch, never on `main`.** If the user is working through the
+exercises rather than maintaining the repo, check out a branch first
+(`git switch -c practice/attempt-1 main`) and leave `main` alone. Answers committed to `main` are published
+to everyone who clones the repo and are wiped by the next sync. Practice branches are not built by CI
+(`on.push.branches` lists only `main` and `solutions`), so they stay private noise-free work.
+
 ## Commands
 
 ```bash
