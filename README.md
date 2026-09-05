@@ -102,8 +102,12 @@ The `solutions` branch holds a reference answer for every exercise; CI proves th
 one method without spoiling the rest:
 
 ```bash
-git diff main solutions -- LinqGym/08-Grouping/GroupBy
+git diff main origin/solutions -- LinqGym/08-Grouping/GroupBy
 ```
+
+A fresh clone has no local `solutions` branch, which is why that command says `origin/solutions`. Run
+`git switch solutions` if you would rather read the whole branch. The `//!` you will see at the end of each
+answer is the marker the generator uses to strip solutions out of `main`; ignore it.
 
 Try for ten minutes first. The reference answers are one good way, not the only way.
 
