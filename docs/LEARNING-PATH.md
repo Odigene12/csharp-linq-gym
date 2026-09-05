@@ -35,17 +35,19 @@ the order they depend on each other; each block is roughly one focused hour.
 
 ## Repeating
 
-Skills fade. To go again:
+Skills fade. To go again, add `--blank`, which restores the unsolved version from `main` whether or not you
+committed your answers:
 
 ```bash
-tools/reset-exercises.sh            # everything
-tools/reset-exercises.sh Aggregate  # one method
-tools/reset-exercises.sh 07-Agg     # one category
+tools/reset-exercises.sh --blank            # everything
+tools/reset-exercises.sh --blank Aggregate  # one method
+tools/reset-exercises.sh --blank 07-Agg     # one category
 ```
 
-or on Windows `powershell -File tools/Reset-Exercises.ps1 -Only Aggregate`. Only `*Exercises.cs` is
-restored, so any notes you added to a README stay put. Better still, work on a branch per attempt
-(`git switch -c attempt-2 main`) so you can diff attempts against each other.
+Without `--blank` the script only discards uncommitted edits, which is what you want mid-exercise but does
+nothing once you have committed. On Windows use `powershell -File tools/Reset-Exercises.ps1 -Blank -Only
+Aggregate`. Only `*Exercises.cs` is restored, so notes you added to a README stay put. Better still, work on
+a branch per attempt (`git switch -c practice/attempt-2 main`) so you can diff attempts against each other.
 
 ## What "done" looks like
 

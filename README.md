@@ -167,7 +167,9 @@ Try for ten minutes first. The reference answers are one good way, not the only 
 
 ## Doing it again
 
-Repetition is the point. Reset one method or everything:
+Repetition is the point. There are two kinds of reset, and which you want depends on whether you committed.
+
+**Throw away work in progress** (nothing committed yet):
 
 ```bash
 tools/reset-exercises.sh              # all 82 exercise files
@@ -175,9 +177,22 @@ tools/reset-exercises.sh Aggregate    # just the Aggregate exercises
 tools/reset-exercises.sh 07-Agg       # everything under 07-Aggregation
 ```
 
-On Windows: `powershell -File tools/Reset-Exercises.ps1 -Only Aggregate`. Both scripts touch only
-`*Exercises.cs`, so notes you write into a README survive a reset. Or keep each attempt on its own branch -
-`git switch -c attempt-2 main` - and diff attempts against each other later.
+**Go back to blank TODOs** even where you already committed answers, which is the normal case on a practice
+branch:
+
+```bash
+tools/reset-exercises.sh --blank            # every exercise, unsolved again
+tools/reset-exercises.sh --blank Aggregate  # one method
+```
+
+`--blank` restores from `main`, so it works no matter what your branch contains. Your commits stay on the
+branch; only the working tree goes back. It refuses to run on `solutions`, where it would overwrite the
+reference answers.
+
+On Windows use `powershell -File tools/Reset-Exercises.ps1 -Only Aggregate`, adding `-Blank` for the second
+form. Both scripts touch only `*Exercises.cs`, so notes you write into a README survive. Starting a fresh
+branch off `main` (`git switch -c practice/attempt-2 main`) is the other way to get a clean slate, and it
+keeps the previous attempt around to diff against.
 
 ## What you will be able to do afterwards
 

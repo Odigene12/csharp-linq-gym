@@ -39,7 +39,9 @@ Maintainer scripts (Windows PowerShell 5.1; run from anywhere, they resolve thei
 ```bash
 powershell -File tools/Update-ReadmeTables.ps1   # rebuild the exercise table in every README
 powershell -File tools/Make-StudentVersion.ps1   # strip answers -> TODO (run on main only)
-tools/reset-exercises.sh [filter]                # discard answers; powershell tools/Reset-Exercises.ps1 -Only X
+tools/reset-exercises.sh [filter]                # discard UNCOMMITTED answers
+tools/reset-exercises.sh --blank [filter]        # restore unsolved TODOs from main, even if committed
+                                                 # PowerShell: Reset-Exercises.ps1 [-Blank] [-Only X]
 ```
 
 Sync `main` after changing anything on `solutions`:
