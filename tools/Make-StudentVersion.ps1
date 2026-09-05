@@ -53,7 +53,9 @@ foreach ($file in $files) {
         $i++
     }
     if ($count -gt 0) {
-        [System.IO.File]::WriteAllLines($file.FullName, $out, (New-Object System.Text.UTF8Encoding $false))
+        # Join with LF explicitly: WriteAllLines would use CRLF on Windows, which git then
+        # normalises on commit and warns about for all 82 files on every sync.
+        [System.IO.File]::WriteAllText($file.FullName, (($out -join "`n") + "`n"), (New-Object System.Text.UTF8Encoding $false))
         $total += $count
         Write-Host ("{0,4} solutions stripped from {1}" -f $count, $file.FullName.Substring($Root.Length + 1))
     }
