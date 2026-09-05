@@ -6,7 +6,7 @@ namespace LinqGym.Data;
 /// </summary>
 public sealed class SchoolData
 {
-    // ───────────────────────── Primitive collections ─────────────────────────
+    // ----- Primitive collections -----
 
     /// <summary>10 ints with duplicates (8 and 3 appear twice). Sum = 56.</summary>
     public List<int> Numbers { get; } = [5, 3, 8, 1, 9, 2, 8, 7, 3, 10];
@@ -41,7 +41,7 @@ public sealed class SchoolData
     /// <summary>An empty list, for testing how methods behave with no elements.</summary>
     public List<int> Empty { get; } = [];
 
-    // ───────────────────────── Entities ─────────────────────────
+    // ----- Entities -----
 
     public List<Student> Students { get; }
     public List<Instructor> Instructors { get; }
@@ -49,7 +49,7 @@ public sealed class SchoolData
     public List<Course> Courses { get; }
     public List<Enrollment> Enrollments { get; }
 
-    // Convenience lookups (plain indexers, not LINQ — feel free to use them in your answers).
+    // Convenience lookups (plain indexers, not LINQ - feel free to use them in your answers).
     public Student Student(int id) => Students[id - 1];
     public Instructor Instructor(int id) => Instructors[id - 1];
     public Cohort Cohort(int id) => Cohorts[id - 1];

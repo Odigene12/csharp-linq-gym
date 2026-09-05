@@ -24,7 +24,7 @@ public abstract class Person
 public sealed class Student : Person
 {
     public required string City { get; init; }
-    /// <summary>Null for students who never supplied one — practise null handling.</summary>
+    /// <summary>Null for students who never supplied one - practise null handling.</summary>
     public string? Email { get; init; }
     public required int CohortId { get; init; }
 }

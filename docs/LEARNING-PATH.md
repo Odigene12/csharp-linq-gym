@@ -31,7 +31,7 @@ the order they depend on each other; each block is roughly one focused hour.
 3. Replace `TODO`. Run only that class: `dotnet test --filter "FullyQualifiedName~WhereExercises"`.
 4. When it passes, ask: is there a shorter or clearer operator for this? (The README's "Compare with" section hints.)
 5. When it fails, read the failure message. xUnit shows expected vs actual; the difference usually names the misconception.
-6. Stuck for more than ten minutes: `git diff main solutions -- LinqGym/01-Filtering/Where` shows the reference answer for that one folder. Read it, close it, write your own.
+6. Stuck for more than ten minutes: `git diff main origin/solutions -- LinqGym/01-Filtering/Where` shows the reference answer for that one folder (`origin/solutions` because a fresh clone has no local `solutions` branch). Read it, close it, write your own.
 
 ## Repeating
 
