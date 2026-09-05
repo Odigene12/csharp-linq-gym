@@ -83,11 +83,25 @@ order that builds skills progressively.
 
 ## Your workflow
 
-Fork the repo so you have somewhere to push, then clone your fork. Give each attempt its own branch, so a
-later attempt can start clean and you can diff the two:
+If the repo is not yours, fork it so you have somewhere to push, then clone your fork. If you own it, or
+you just cloned it directly, no fork is needed.
+
+Either way, **work on a branch, never on `main` itself**:
 
 ```bash
-git switch -c attempt-1
+git switch -c practice/attempt-1 main
+```
+
+`main` has to stay entirely unsolved. It is regenerated from `solutions`, so answers committed to `main` are
+published to everyone who clones the repo and are then destroyed by the next sync. CI rejects any push to
+`main` that contains a solved exercise, so a slip is caught rather than shipped.
+
+A branch per attempt also lets you start over cleanly and diff attempts against each other later. If you
+want to practise and maintain at the same time without switching branches, give the practice branch its own
+directory:
+
+```bash
+git worktree add ../linq-practice -b practice/attempt-2 main
 ```
 
 **Per method.** Work one folder at a time.

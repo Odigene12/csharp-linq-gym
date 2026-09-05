@@ -44,10 +44,24 @@ jobs:
           if grep -rn --include='*Exercises.cs' '//!' LinqGym; then
             echo 'Solution markers found on main - run tools/Make-StudentVersion.ps1'; exit 1
           fi
-      - name: Every exercise must fail with NotImplementedException
+      # Guards against answers reaching main: a solved exercise passes, and passed
+      # must be zero. Counting NotImplementedException alone is too weak, because
+      # each failure logs it about twice, so the count stays above the test total
+      # even when many exercises have been solved.
+      - name: Every exercise must be an unsolved TODO
         run: |
           dotnet test --nologo --logger 'trx;LogFileName=results.trx' || true
-          total=$(grep -o 'total="[0-9]*"' LinqGym/TestResults/results.trx | head -1 | grep -o '[0-9]*')
-          nie=$(grep -c 'NotImplementedException' LinqGym/TestResults/results.trx)
-          echo "total=$total notImplemented=$nie"
-          test "$total" -gt 0 && test "$nie" -ge "$total"
+          trx=$(find . -name results.trx | head -1)
+          if [ -z "$trx" ]; then echo 'No trx file was produced.'; exit 1; fi
+          counters=$(grep -oE '<Counters[^/]*/>' "$trx" | head -1)
+          field() { echo "$counters" | grep -oE " $1=\"[0-9]+\"" | grep -oE '[0-9]+'; }
+          total=$(field total); passed=$(field passed); failed=$(field failed)
+          nie=$(grep -c 'NotImplementedException' "$trx" || true)
+          echo "total=$total passed=$passed failed=$failed notImplemented=$nie"
+          if [ "$total" -eq 0 ]; then echo 'No tests ran.'; exit 1; fi
+          if [ "$passed" -ne 0 ]; then
+            echo "$passed exercise(s) are solved on main. Answers belong on solutions; regenerate main."
+            exit 1
+          fi
+          if [ "$failed" -ne "$total" ]; then echo 'Some tests did not run.'; exit 1; fi
+          if [ "$nie" -lt "$total" ]; then echo 'Some tests failed for a reason other than the TODO placeholder.'; exit 1; fi
