@@ -3,6 +3,9 @@
 Thanks for helping make the gym better. The most useful contributions are new exercises, sharper
 explanations in a README, and corrections to anything that is wrong.
 
+If you use Claude Code or another coding agent in this repo, `CLAUDE.md` states the same rules in the
+form an agent needs; keep the two in step when the workflow changes.
+
 ## Branch model
 
 - **`main`** holds the exercises with `TODO` placeholders. Every test on `main` fails by design.
