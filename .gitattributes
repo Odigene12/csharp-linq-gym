@@ -1,0 +1,12 @@
+# Store text files with LF in the repository; check them out per the rules below.
+* text=auto
+
+# reset-exercises.sh must be LF everywhere or it will not run on Linux/macOS
+# after being cloned from a machine that checks out CRLF.
+*.sh    text eol=lf
+
+# Windows tooling is happiest with CRLF for these.
+*.ps1   text eol=crlf
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+*.sln   text eol=crlf

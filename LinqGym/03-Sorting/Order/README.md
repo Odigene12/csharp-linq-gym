@@ -38,7 +38,11 @@ IOrderedEnumerable<T> Order<T>(this IEnumerable<T> source, IComparer<T>? compare
 
 ## Query syntax
 
-`orderby n` without a key expression is not allowed; use `orderby n` with the range variable itself: `from n in xs orderby n select n`.
+Query syntax has no `Order` keyword, but `orderby` accepts any expression - including the range variable itself, which is the same thing:
+
+```csharp
+var sorted = from n in Data.Numbers orderby n select n;   // compiles to OrderBy(n => n)
+```
 
 ## Exercises
 

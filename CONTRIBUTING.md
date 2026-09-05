@@ -32,11 +32,16 @@ explanations in a README, and corrections to anything that is wrong.
 
    ```bash
    git checkout main
-   git checkout solutions -- LinqGym docs README.md
+   git checkout solutions -- .
    powershell -File tools/Make-StudentVersion.ps1
    dotnet build
-   git commit -am "Sync exercises from solutions"
+   git commit -am "Sync from solutions"
    ```
+
+   `git checkout solutions -- .` copies every tracked file, so a change to `tools/`, `docs/` or the
+   workflow cannot be left behind; the generator then strips the answers back out. It does not propagate
+   *deletions*, so if you removed a file on `solutions`, delete it on `main` by hand. CI on `main` fails
+   if any `//!` marker survives or if a test does something other than throw `NotImplementedException`.
 
 ## Conventions
 

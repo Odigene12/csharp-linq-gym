@@ -29,7 +29,7 @@ static IEnumerable<T> Sequence<T>(T start, T endInclusive, T step) where T : INu
 ## Watch out for
 
 - .NET 10+ only.
-- A zero step, or a step whose sign points away from the end, throws `ArgumentOutOfRangeException` immediately.
+- A step whose sign points away from the end (`Sequence(10, 1, 1)`) throws `ArgumentOutOfRangeException` immediately. A zero step throws too - unless `start == endInclusive`, where the single-element rule above wins and you get one element.
 - Floating-point steps accumulate rounding; `Sequence(0.0, 1.0, 0.1)` may stop at 0.9999.
 
 ## Compare with
