@@ -12,7 +12,7 @@ public class SequenceExercises : LinqExercise
     public void Easy_01_OneToTen()
     {
         // Task: 1 through 10 with a step of 1.
-        IEnumerable<int> result = Enumerable.Sequence(1, 10, 1); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(Enumerable.Range(1, 10), result);
     }
@@ -21,7 +21,7 @@ public class SequenceExercises : LinqExercise
     public void Easy_02_MultiplesOfFive()
     {
         // Task: 0, 5, 10, 15, 20.
-        IEnumerable<int> result = Enumerable.Sequence(0, 20, 5); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 0, 5, 10, 15, 20 }, result);
     }
@@ -30,7 +30,7 @@ public class SequenceExercises : LinqExercise
     public void Easy_03_CountingDown()
     {
         // Task: 10, 7, 4, 1 (negative step).
-        IEnumerable<int> result = Enumerable.Sequence(10, 1, -3); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10, 7, 4, 1 }, result);
     }
@@ -41,7 +41,7 @@ public class SequenceExercises : LinqExercise
     public void Medium_04_DoublesInQuarterSteps()
     {
         // Task: 0.0, 0.25, 0.5, 0.75, 1.0.
-        IEnumerable<double> result = Enumerable.Sequence(0.0, 1.0, 0.25); //!
+        IEnumerable<double> result = TODO;
 
         Assert.Equal(new[] { 0.0, 0.25, 0.5, 0.75, 1.0 }, result);
     }
@@ -50,7 +50,7 @@ public class SequenceExercises : LinqExercise
     public void Medium_05_EndIsInclusiveButNotAlwaysHit()
     {
         // Task: from 1 to 10 in steps of 4 - the sequence stops at 9 because 13 would exceed the end.
-        IEnumerable<int> result = Enumerable.Sequence(1, 10, 4); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 5, 9 }, result);
     }
@@ -63,7 +63,7 @@ public class SequenceExercises : LinqExercise
         // Task: a positive step with start > end throws ArgumentOutOfRangeException (as does a step of 0).
         Assert.Throws<ArgumentOutOfRangeException>(() =>
         {
-            IEnumerable<int> result = Enumerable.Sequence(10, 1, 1); //!
+            IEnumerable<int> result = TODO;
         });
     }
 
@@ -71,7 +71,7 @@ public class SequenceExercises : LinqExercise
     public void Hard_07_LettersAToE()
     {
         // Task: the characters a, b, c, d, e - char is a numeric type as far as Sequence is concerned (step (char)1).
-        IEnumerable<char> result = Enumerable.Sequence('a', 'e', (char)1); //!
+        IEnumerable<char> result = TODO;
 
         Assert.Equal("abcde", new string(result.ToArray()));
     }

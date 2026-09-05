@@ -11,7 +11,7 @@ public class UnionByExercises : LinqExercise
     public void Easy_01_FirstStudentPerCityAcrossTwoCohorts()
     {
         // Task: students of cohort 1 union-by-City students of cohort 2 (Ids of the survivors).
-        IEnumerable<int> result = Data.Cohort(1).Students.UnionBy(Data.Cohort(2).Students, s => s.City).Select(s => s.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 3, 5, 7 }, result);
     }
@@ -20,7 +20,7 @@ public class UnionByExercises : LinqExercise
     public void Easy_02_UnionByLowercase()
     {
         // Task: Data.Words union-by lower-cased value with ["KIWI", "Apple"]; only KIWI is new.
-        IEnumerable<string> result = Data.Words.UnionBy(new[] { "KIWI", "Apple" }, w => w.ToLowerInvariant()); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(8, result.Count());
         Assert.Equal("KIWI", result.Last());
@@ -30,7 +30,7 @@ public class UnionByExercises : LinqExercise
     public void Easy_03_UnionByLastDigit()
     {
         // Task: Data.Numbers union-by last digit (n % 10) with [12, 22, 13] - nothing new is added.
-        IEnumerable<int> result = Data.Numbers.UnionBy(new[] { 12, 22, 13 }, n => n % 10); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 5, 3, 8, 1, 9, 2, 7, 10 }, result);
     }
@@ -41,7 +41,7 @@ public class UnionByExercises : LinqExercise
     public void Medium_04_UnionByWithAComparer()
     {
         // Task: TagsA union-by the tag itself with TagsB, ignoring case in the key comparison.
-        IEnumerable<string> result = Data.TagsA.UnionBy(Data.TagsB, t => t, StringComparer.OrdinalIgnoreCase); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(4, result.Count());
     }
@@ -56,7 +56,7 @@ public class UnionByExercises : LinqExercise
             new() { Id = 99, Code = "ML101", Title = "Machine Learning", Credits = 4, Category = "Data" },
         };
 
-        IEnumerable<Course> result = Data.Courses.UnionBy(incoming, c => c.Code); //!
+        IEnumerable<Course> result = TODO;
 
         Assert.Equal(9, result.Count());
         Assert.Equal("Intro to C#", result.First(c => c.Code == "CS101").Title);
@@ -68,7 +68,7 @@ public class UnionByExercises : LinqExercise
     public void Hard_06_OneInstructorPerSpecialty()
     {
         // Task: primary instructors union-by Specialty with all junior instructors (Ids).
-        IEnumerable<int> result = Data.Cohorts.Select(c => c.PrimaryInstructor).UnionBy(Data.Cohorts.SelectMany(c => c.JuniorInstructors), i => i.Specialty).Select(i => i.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 2, 6, 3, 5 }, result);
     }
@@ -77,7 +77,7 @@ public class UnionByExercises : LinqExercise
     public void Hard_07_FirstEnrollmentPerStudentAcrossYears()
     {
         // Task: 2024 enrollments union-by StudentId with 2025 enrollments - one enrollment per student, 17 in total.
-        IEnumerable<Enrollment> result = Data.Enrollments.Where(e => e.EnrolledOn.Year == 2024).UnionBy(Data.Enrollments.Where(e => e.EnrolledOn.Year == 2025), e => e.StudentId); //!
+        IEnumerable<Enrollment> result = TODO;
 
         Assert.Equal(17, result.Count());
         Assert.Equal(10, result.First().Id);

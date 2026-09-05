@@ -15,7 +15,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: call TryGetNonEnumeratedCount on Data.Numbers, capturing the count into `count`.
         int count = -1;
 
-        bool result = Data.Numbers.TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.True(result);
         Assert.Equal(10, count);
@@ -27,7 +27,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: a Where query cannot know its count without running.
         int count = -1;
 
-        bool result = Data.Numbers.Where(n => n > 3).TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.False(result);
         Assert.Equal(0, count);
@@ -39,7 +39,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: an array reports its length.
         int count = -1;
 
-        bool result = Data.MixedBag.TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.True(result);
         Assert.Equal(10, count);
@@ -53,7 +53,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: Select does not change the number of elements, so its count is known cheaply.
         int count = -1;
 
-        bool result = Data.Numbers.Select(n => n * 2).TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.True(result);
         Assert.Equal(10, count);
@@ -65,7 +65,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: Enumerable.Range(1, 5).
         int count = -1;
 
-        bool result = Enumerable.Range(1, 5).TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.True(result);
         Assert.Equal(5, count);
@@ -79,7 +79,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: the same Where query, but materialized with ToList first - now the count is known.
         int count = -1;
 
-        bool result = Data.Numbers.Where(n => n > 3).ToList().TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.True(result);
         Assert.Equal(6, count);
@@ -91,7 +91,7 @@ public class TryGetNonEnumeratedCountExercises : LinqExercise
         // Task: Skip(2) over a list - the runtime can compute 10 - 2 without enumerating.
         int count = -1;
 
-        bool result = Data.Numbers.Skip(2).TryGetNonEnumeratedCount(out count); //!
+        bool result = TODO;
 
         Assert.True(result);
         Assert.Equal(8, count);

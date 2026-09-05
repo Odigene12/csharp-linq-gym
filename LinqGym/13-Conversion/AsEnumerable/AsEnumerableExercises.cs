@@ -12,7 +12,7 @@ public class AsEnumerableExercises : LinqExercise
     public void Easy_01_ItIsTheSameObject()
     {
         // Task: AsEnumerable on Data.Numbers; the result is reference-equal to Data.Numbers.
-        IEnumerable<int> result = Data.Numbers.AsEnumerable(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Same(Data.Numbers, result);
     }
@@ -21,7 +21,7 @@ public class AsEnumerableExercises : LinqExercise
     public void Easy_02_PickLinqReverseOverListReverse()
     {
         // Task: List<T>.Reverse() is void and mutates. Use AsEnumerable so that .Reverse() resolves to LINQ's.
-        IEnumerable<int> result = Data.Numbers.AsEnumerable().Reverse(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10, 3, 7, 8, 2, 9, 1, 8, 3, 5 }, result);
         Assert.Equal(5, Data.Numbers[0]);
@@ -31,7 +31,7 @@ public class AsEnumerableExercises : LinqExercise
     public void Easy_03_RuntimeTypeIsUnchanged()
     {
         // Task: the compile-time type becomes IEnumerable<int>, but the runtime object is still a List<int>.
-        IEnumerable<int> result = Data.Numbers.AsEnumerable(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.IsType<List<int>>(result);
     }
@@ -42,7 +42,7 @@ public class AsEnumerableExercises : LinqExercise
     public void Medium_04_LinqStillWorksAfterwards()
     {
         // Task: count the active students after AsEnumerable.
-        int result = Data.Students.AsEnumerable().Count(s => s.Active); //!
+        int result = TODO;
 
         Assert.Equal(16, result);
     }
@@ -51,7 +51,7 @@ public class AsEnumerableExercises : LinqExercise
     public void Medium_05_StringsAreSequencesOfChars()
     {
         // Task: the number of distinct characters in "hello" (AsEnumerable makes the char sequence explicit).
-        int result = "hello".AsEnumerable().Distinct().Count(); //!
+        int result = TODO;
 
         Assert.Equal(4, result);
     }
@@ -63,7 +63,7 @@ public class AsEnumerableExercises : LinqExercise
     {
         // Task: start from Data.Students.AsQueryable(), filter Active with Queryable.Where, then call AsEnumerable and
         // project to FullName. Everything after AsEnumerable runs as ordinary in-memory LINQ, not as an IQueryable.
-        IEnumerable<string> result = Data.Students.AsQueryable().Where(s => s.Active).AsEnumerable().Select(s => s.FullName); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(16, result.Count());
         Assert.False(result is IQueryable);
@@ -76,7 +76,7 @@ public class AsEnumerableExercises : LinqExercise
         // Return whether the set of numbers contains 7, going through AsEnumerable.
         var set = Data.Numbers.ToHashSet();
 
-        bool result = set.AsEnumerable().Contains(7); //!
+        bool result = TODO;
 
         Assert.True(result);
     }

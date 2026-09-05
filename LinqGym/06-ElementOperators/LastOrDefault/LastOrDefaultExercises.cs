@@ -11,7 +11,7 @@ public class LastOrDefaultExercises : LinqExercise
     public void Easy_01_NoMatchGivesZero()
     {
         // Task: the last number greater than 100 (there is none).
-        int result = Data.Numbers.LastOrDefault(n => n > 100); //!
+        int result = TODO;
 
         Assert.Equal(0, result);
     }
@@ -20,7 +20,7 @@ public class LastOrDefaultExercises : LinqExercise
     public void Easy_02_NoMatchGivesNull()
     {
         // Task: the last student living in "Paris" (there is none).
-        Student? result = Data.Students.LastOrDefault(s => s.City == "Paris"); //!
+        Student? result = TODO;
 
         Assert.Null(result);
     }
@@ -29,7 +29,7 @@ public class LastOrDefaultExercises : LinqExercise
     public void Easy_03_EmptyGivesDefault()
     {
         // Task: LastOrDefault() on Data.Empty.
-        int result = Data.Empty.LastOrDefault(); //!
+        int result = TODO;
 
         Assert.Equal(0, result);
     }
@@ -40,7 +40,7 @@ public class LastOrDefaultExercises : LinqExercise
     public void Medium_04_ExplicitDefaultValue()
     {
         // Task: -1 when no number is greater than 100 (use the overload with a default value).
-        int result = Data.Numbers.LastOrDefault(n => n > 100, -1); //!
+        int result = TODO;
 
         Assert.Equal(-1, result);
     }
@@ -49,7 +49,7 @@ public class LastOrDefaultExercises : LinqExercise
     public void Medium_05_LastEnrollmentOfStudentNine()
     {
         // Task: the last enrollment (in list order) belonging to student 9.
-        Enrollment? result = Data.Enrollments.LastOrDefault(e => e.StudentId == 9); //!
+        Enrollment? result = TODO;
 
         Assert.Equal(17, result?.Id);
     }
@@ -61,7 +61,7 @@ public class LastOrDefaultExercises : LinqExercise
     {
         // Task: order enrollments by EnrolledOn and return the last one from 2024.
         // Four enrollments share the last 2024 date; the stable sort keeps them in list order.
-        Enrollment? result = Data.Enrollments.OrderBy(e => e.EnrolledOn).LastOrDefault(e => e.EnrolledOn.Year == 2024); //!
+        Enrollment? result = TODO;
 
         Assert.Equal(31, result?.Id);
     }
@@ -70,7 +70,7 @@ public class LastOrDefaultExercises : LinqExercise
     public void Hard_07_NullConditionalChain()
     {
         // Task: the FirstName of the last student without an email, using ?. after LastOrDefault.
-        string? result = Data.Students.LastOrDefault(s => s.Email is null)?.FirstName; //!
+        string? result = TODO;
 
         Assert.Equal("Quincy", result);
     }

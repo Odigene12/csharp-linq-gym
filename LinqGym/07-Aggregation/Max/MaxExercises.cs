@@ -11,7 +11,7 @@ public class MaxExercises : LinqExercise
     public void Easy_01_LargestNumber()
     {
         // Task: the largest value in Data.Numbers.
-        int result = Data.Numbers.Max(); //!
+        int result = TODO;
 
         Assert.Equal(10, result);
     }
@@ -20,7 +20,7 @@ public class MaxExercises : LinqExercise
     public void Easy_02_HighestPrice()
     {
         // Task: the largest price.
-        decimal result = Data.Prices.Max(); //!
+        decimal result = TODO;
 
         Assert.Equal(120.00m, result);
     }
@@ -29,7 +29,7 @@ public class MaxExercises : LinqExercise
     public void Easy_03_LongestWordLength()
     {
         // Task: the largest word Length.
-        int result = Data.Words.Max(w => w.Length); //!
+        int result = TODO;
 
         Assert.Equal(10, result);
     }
@@ -40,7 +40,7 @@ public class MaxExercises : LinqExercise
     public void Medium_04_LatestInstructorBirthday()
     {
         // Task: the latest Birthday among instructors.
-        DateOnly result = Data.Instructors.Max(i => i.Birthday); //!
+        DateOnly result = TODO;
 
         Assert.Equal(new DateOnly(2298, 1, 1), result);
     }
@@ -51,7 +51,7 @@ public class MaxExercises : LinqExercise
         // Task: Max() on Data.Empty throws InvalidOperationException.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            int result = Data.Empty.Max(); //!
+            int result = TODO;
         });
     }
 
@@ -59,7 +59,7 @@ public class MaxExercises : LinqExercise
     public void Medium_06_MaxIgnoresNulls()
     {
         // Task: the largest non-null score in Data.NullableScores.
-        int? result = Data.NullableScores.Max(); //!
+        int? result = TODO;
 
         Assert.Equal(100, result);
     }
@@ -68,7 +68,7 @@ public class MaxExercises : LinqExercise
     public void Medium_07_HighestGrade()
     {
         // Task: the highest Grade across all enrollments.
-        int? result = Data.Enrollments.Max(e => e.Grade); //!
+        int? result = TODO;
 
         Assert.Equal(100, result);
     }
@@ -79,7 +79,7 @@ public class MaxExercises : LinqExercise
     public void Hard_08_MaxWithAComparer()
     {
         // Task: the largest word ignoring case (StringComparer.OrdinalIgnoreCase).
-        string? result = Data.Words.Max(StringComparer.OrdinalIgnoreCase); //!
+        string? result = TODO;
 
         Assert.Equal("grape", result);
     }
@@ -88,7 +88,7 @@ public class MaxExercises : LinqExercise
     public void Hard_09_LargestCityPopulation()
     {
         // Task: the number of students in the most populous city (group by City, then Max of the group sizes).
-        int result = Data.Students.GroupBy(s => s.City).Max(g => g.Count()); //!
+        int result = TODO;
 
         Assert.Equal(9, result);
     }
@@ -97,7 +97,7 @@ public class MaxExercises : LinqExercise
     public void Hard_10_OldestAgePerCohort()
     {
         // Task: for each cohort, the highest student Age.
-        IEnumerable<int> result = Data.Cohorts.Select(c => c.Students.Max(s => s.Age)); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 54, 57, 53, 77 }, result);
     }

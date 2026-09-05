@@ -14,7 +14,7 @@ public class CastExercises : LinqExercise
         // Task: the non-generic ArrayList as an IEnumerable<int>.
         var legacy = new System.Collections.ArrayList { 1, 2, 3 };
 
-        IEnumerable<int> result = legacy.Cast<int>(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 2, 3 }, result);
     }
@@ -23,7 +23,7 @@ public class CastExercises : LinqExercise
     public void Easy_02_CastToObject()
     {
         // Task: Data.Numbers as IEnumerable<object> (each int gets boxed).
-        IEnumerable<object> result = Data.Numbers.Cast<object>(); //!
+        IEnumerable<object> result = TODO;
 
         Assert.Equal(10, result.Count());
         Assert.Equal(5, result.First());
@@ -35,7 +35,7 @@ public class CastExercises : LinqExercise
         // Task: an object[] that happens to hold strings, as IEnumerable<string>.
         object[] boxed = { "a", "b" };
 
-        IEnumerable<string> result = boxed.Cast<string>(); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "a", "b" }, result);
     }
@@ -48,7 +48,7 @@ public class CastExercises : LinqExercise
         // Task: Cast<int> over Data.MixedBag; building the query is fine, ToList throws at the first string.
         Assert.Throws<InvalidCastException>(() =>
         {
-            List<int> result = Data.MixedBag.Cast<int>().ToList(); //!
+            List<int> result = TODO;
         });
     }
 
@@ -61,11 +61,11 @@ public class CastExercises : LinqExercise
 #pragma warning disable CA2021 // the invalid cast is the point of this exercise
         Assert.Throws<InvalidCastException>(() =>
         {
-            List<int> cast = longs.Cast<int>().ToList(); //!
+            List<int> cast = TODO;
         });
 #pragma warning restore CA2021
 
-        IEnumerable<int> converted = longs.Select(l => (int)l); //!
+        IEnumerable<int> converted = TODO;
 
         Assert.Equal(new[] { 1, 2 }, converted);
     }
@@ -77,7 +77,7 @@ public class CastExercises : LinqExercise
     {
         // Task: Data.Students as IEnumerable<Person>. (IEnumerable<T> is covariant, so a plain assignment would also work -
         // Cast just makes the intent explicit.)
-        IEnumerable<Person> result = Data.Students.Cast<Person>(); //!
+        IEnumerable<Person> result = TODO;
 
         Assert.Equal(20, result.Count());
         Assert.Equal("Anne", result.First().FirstName);
@@ -89,7 +89,7 @@ public class CastExercises : LinqExercise
         // Task: `untyped` only exposes the non-generic IEnumerable, which has no Where. Cast first, then filter (> 8).
         System.Collections.IEnumerable untyped = Data.Numbers;
 
-        IEnumerable<int> result = untyped.Cast<int>().Where(n => n > 8); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 9, 10 }, result);
     }

@@ -11,7 +11,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_01_FromWhereSelect()
     {
         // Task: the even numbers, with from / where / select.
-        IEnumerable<int> result = from n in Data.Numbers where n % 2 == 0 select n; //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 8, 2, 8, 10 }, result);
     }
@@ -20,7 +20,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_02_OrderByDescending()
     {
         // Task: numbers descending, with `orderby n descending`.
-        IEnumerable<int> result = from n in Data.Numbers orderby n descending select n; //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10, 9, 8, 8, 7, 5, 3, 3, 2, 1 }, result);
     }
@@ -29,7 +29,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_03_OrderByMultipleKeys()
     {
         // Task: students by City then LastName - `orderby s.City, s.LastName` (a comma list = ThenBy).
-        IEnumerable<int> result = from s in Data.Students orderby s.City, s.LastName select s.Id; //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 7, 13, 18, 5, 9, 15, 20, 3, 6, 11, 16, 1, 2, 4, 8, 10, 12, 14, 17, 19 }, result);
     }
@@ -38,7 +38,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_04_LetIntroducesAVariable()
     {
         // Task: (word, length) pairs for words longer than 5 characters, computing the length once with `let`.
-        IEnumerable<(string Word, int Length)> result = from w in Data.Words let len = w.Length where len > 5 select (w, len); //!
+        IEnumerable<(string Word, int Length)> result = TODO;
 
         Assert.Equal(new[] { ("Banana", 6), ("cherry", 6), ("banana", 6), ("Elderberry", 10) }, result);
     }
@@ -47,7 +47,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_05_GroupBy()
     {
         // Task: students grouped by City - `group s by s.City`.
-        IEnumerable<IGrouping<string, Student>> result = from s in Data.Students group s by s.City; //!
+        IEnumerable<IGrouping<string, Student>> result = TODO;
 
         Assert.Equal(4, result.Count());
     }
@@ -56,7 +56,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_06_GroupIntoWithProjection()
     {
         // Task: (City, count) - `group s by s.City into g select (g.Key, g.Count())`.
-        IEnumerable<(string City, int Count)> result = from s in Data.Students group s by s.City into g select (g.Key, g.Count()); //!
+        IEnumerable<(string City, int Count)> result = TODO;
 
         Assert.Equal(new[] { ("Nashville", 9), ("Memphis", 4), ("Knoxville", 4), ("Chattanooga", 3) }, result);
     }
@@ -65,7 +65,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_07_Join()
     {
         // Task: the FirstName for each enrollment - `join s in Data.Students on e.StudentId equals s.Id`.
-        IEnumerable<string> result = from e in Data.Enrollments join s in Data.Students on e.StudentId equals s.Id select s.FirstName; //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(32, result.Count());
         Assert.Equal("Anne", result.First());
@@ -75,7 +75,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_08_JoinInto()
     {
         // Task: (Code, enrollment count) per course - `join ... into es` is a GroupJoin.
-        IEnumerable<(string Code, int Count)> result = from c in Data.Courses join e in Data.Enrollments on c.Id equals e.CourseId into es select (c.Code, es.Count()); //!
+        IEnumerable<(string Code, int Count)> result = TODO;
 
         Assert.Equal(new[] { 8, 4, 5, 4, 5, 4, 0, 2 }, result.Select(r => r.Count));
     }
@@ -84,12 +84,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_09_LeftJoin()
     {
         // Task: the classic query-syntax left join: `join ... into es from e in es.DefaultIfEmpty() select (c.Code, (int?)e?.Id)`.
-        IEnumerable<(string Code, int? EnrollmentId)> result = //!{
-            from c in Data.Courses
-            join e in Data.Enrollments on c.Id equals e.CourseId into es
-            from e in es.DefaultIfEmpty()
-            select (c.Code, (int?)e?.Id);
-        //!}
+        IEnumerable<(string Code, int? EnrollmentId)> result = TODO;
 
         Assert.Equal(33, result.Count());
         Assert.Contains(("QC999", (int?)null), result);
@@ -99,7 +94,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_10_MultipleFromIsSelectMany()
     {
         // Task: (CohortName, StudentFirstName) for every inactive student - `from c in ... from s in c.Students where ...`.
-        IEnumerable<(string Cohort, string Student)> result = from c in Data.Cohorts from s in c.Students where !s.Active select (c.Name, s.FirstName); //!
+        IEnumerable<(string Cohort, string Student)> result = TODO;
 
         Assert.Equal(4, result.Count());
         Assert.Equal(("Evening Five", "Bobbie"), result.First());
@@ -109,7 +104,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_11_SelectIntoContinuation()
     {
         // Task: ages over 60 - project to Age, then continue with `into age where age > 60 select age`.
-        IEnumerable<int> result = from s in Data.Students select s.Age into age where age > 60 select age; //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 67, 77 }, result);
     }
@@ -118,7 +113,7 @@ public class QuerySyntaxExercises : LinqExercise
     public void Query_12_MixQuerySyntaxWithMethodCalls()
     {
         // Task: the sum of the even numbers - wrap a query expression in parentheses and call .Sum() on it.
-        int result = (from n in Data.Numbers where n % 2 == 0 select n).Sum(); //!
+        int result = TODO;
 
         Assert.Equal(28, result);
     }

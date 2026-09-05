@@ -12,7 +12,7 @@ public class IntersectByExercises : LinqExercise
     public void Easy_01_StudentsWithGivenIds()
     {
         // Task: students whose Id is in [3, 5, 99].
-        IEnumerable<Student> result = Data.Students.IntersectBy(new[] { 3, 5, 99 }, s => s.Id); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { 3, 5 }, result.Select(s => s.Id));
     }
@@ -21,7 +21,7 @@ public class IntersectByExercises : LinqExercise
     public void Easy_02_ResultIsDistinctByKey()
     {
         // Task: words whose Length is 5. Four words qualify, but IntersectBy yields only the FIRST per key.
-        IEnumerable<string> result = Data.Words.IntersectBy(new[] { 5 }, w => w.Length); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "apple" }, result);
     }
@@ -30,7 +30,7 @@ public class IntersectByExercises : LinqExercise
     public void Easy_03_FirstCoursePerWantedCategory()
     {
         // Task: courses whose Category is Backend or Data (first per category).
-        IEnumerable<string> result = Data.Courses.IntersectBy(new[] { "Backend", "Data" }, c => c.Category).Select(c => c.Code); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "CS101", "DB101" }, result);
     }
@@ -41,7 +41,7 @@ public class IntersectByExercises : LinqExercise
     public void Medium_04_IntersectByWithAComparer()
     {
         // Task: words matching ["BANANA", "grape"] ignoring case.
-        IEnumerable<string> result = Data.Words.IntersectBy(new[] { "BANANA", "grape" }, w => w, StringComparer.OrdinalIgnoreCase); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "Banana", "grape" }, result);
     }
@@ -50,7 +50,7 @@ public class IntersectByExercises : LinqExercise
     public void Medium_05_EnrollmentsOfInactiveStudents()
     {
         // Task: enrollments whose StudentId belongs to an inactive student (only Kate, id 11, has one).
-        IEnumerable<int> result = Data.Enrollments.IntersectBy(Data.Students.Where(s => !s.Active).Select(s => s.Id), e => e.StudentId).Select(e => e.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 19 }, result);
     }
@@ -61,7 +61,7 @@ public class IntersectByExercises : LinqExercise
     public void Hard_06_StudentsWhoHaveAnyEnrollment()
     {
         // Task: the students whose Id appears in Data.Enrollments.
-        IEnumerable<Student> result = Data.Students.IntersectBy(Data.Enrollments.Select(e => e.StudentId), s => s.Id); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(17, result.Count());
     }
@@ -70,7 +70,7 @@ public class IntersectByExercises : LinqExercise
     public void Hard_07_CoursesTaughtByActiveInstructors()
     {
         // Task: courses whose InstructorId is the Id of an ACTIVE instructor. Key types must match (int? vs int).
-        IEnumerable<Course> result = Data.Courses.IntersectBy(Data.Instructors.Where(i => i.Active).Select(i => (int?)i.Id), c => c.InstructorId); //!
+        IEnumerable<Course> result = TODO;
 
         Assert.Equal(new[] { "CS101", "CS201", "JS101", "DB101", "QC999" }, result.Select(c => c.Code));
     }

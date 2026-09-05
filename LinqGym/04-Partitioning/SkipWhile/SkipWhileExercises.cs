@@ -11,7 +11,7 @@ public class SkipWhileExercises : LinqExercise
     public void Easy_01_SkipWhileLessThanEight()
     {
         // Task: skip the leading numbers that are less than 8, keep the rest (including later small values).
-        IEnumerable<int> result = Data.Numbers.SkipWhile(n => n < 8); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 8, 1, 9, 2, 8, 7, 3, 10 }, result);
     }
@@ -20,7 +20,7 @@ public class SkipWhileExercises : LinqExercise
     public void Easy_02_SkipWhileLongerThanFour()
     {
         // Task: skip the leading words longer than 4 characters.
-        IEnumerable<string> result = Data.Words.SkipWhile(w => w.Length > 4); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "date", "banana", "Elderberry", "fig", "APPLE", "grape" }, result);
     }
@@ -29,7 +29,7 @@ public class SkipWhileExercises : LinqExercise
     public void Easy_03_SkipUntilNine()
     {
         // Task: skip everything before the first 9 (the 9 itself is kept).
-        IEnumerable<int> result = Data.Numbers.SkipWhile(n => n != 9); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 9, 2, 8, 7, 3, 10 }, result);
     }
@@ -40,7 +40,7 @@ public class SkipWhileExercises : LinqExercise
     public void Medium_04_SkipLeadingActiveStudents()
     {
         // Task: skip students while they are Active. The first inactive student (Bobbie) and everyone after remain.
-        IEnumerable<Student> result = Data.Students.SkipWhile(s => s.Active); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(19, result.Count());
         Assert.Equal("Bobbie", result.First().FirstName);
@@ -50,7 +50,7 @@ public class SkipWhileExercises : LinqExercise
     public void Medium_05_SkipWhileWithIndex()
     {
         // Task: use the (element, index) overload to skip the first seven positions.
-        IEnumerable<int> result = Data.Numbers.SkipWhile((n, i) => i < 7); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 7, 3, 10 }, result);
     }
@@ -63,7 +63,7 @@ public class SkipWhileExercises : LinqExercise
         // Task: remove the zeros at the start only.
         var digits = new[] { 0, 0, 0, 4, 0, 5 };
 
-        IEnumerable<int> result = digits.SkipWhile(d => d == 0); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 4, 0, 5 }, result);
     }
@@ -72,7 +72,7 @@ public class SkipWhileExercises : LinqExercise
     public void Hard_07_EnrollmentsFromTheFirst2025One()
     {
         // Task: order enrollments by EnrolledOn, then skip while the year is before 2025.
-        IEnumerable<Enrollment> result = Data.Enrollments.OrderBy(e => e.EnrolledOn).SkipWhile(e => e.EnrolledOn.Year < 2025); //!
+        IEnumerable<Enrollment> result = TODO;
 
         Assert.Equal(15, result.Count());
         Assert.Equal(1, result.First().Id);

@@ -11,7 +11,7 @@ public class ToListExercises : LinqExercise
     public void Easy_01_EvenNumbersAsAList()
     {
         // Task: the even numbers as a List<int>.
-        List<int> result = Data.Numbers.Where(n => n % 2 == 0).ToList(); //!
+        List<int> result = TODO;
 
         Assert.IsType<List<int>>(result);
         Assert.Equal(new[] { 8, 2, 8, 10 }, result);
@@ -21,7 +21,7 @@ public class ToListExercises : LinqExercise
     public void Easy_02_ActiveStudentNames()
     {
         // Task: the first names of active students as a list (then use the Count PROPERTY).
-        List<string> result = Data.Students.Where(s => s.Active).Select(s => s.FirstName).ToList(); //!
+        List<string> result = TODO;
 
         Assert.Equal(16, result.Count);
     }
@@ -30,7 +30,7 @@ public class ToListExercises : LinqExercise
     public void Easy_03_EmptyQueryGivesAnEmptyListNotNull()
     {
         // Task: students from "Paris" as a list - empty, never null.
-        List<Student> result = Data.Students.Where(s => s.City == "Paris").ToList(); //!
+        List<Student> result = TODO;
 
         Assert.NotNull(result);
         Assert.Empty(result);
@@ -44,7 +44,7 @@ public class ToListExercises : LinqExercise
         // Task: materialize "greater than 1" from `source`. Elements added afterwards must NOT appear in the snapshot.
         var source = new List<int> { 1, 2, 3 };
 
-        List<int> snapshot = source.Where(n => n > 1).ToList(); //!
+        List<int> snapshot = TODO;
 
         source.Add(4);
         Assert.Equal(new[] { 2, 3 }, snapshot);
@@ -54,7 +54,7 @@ public class ToListExercises : LinqExercise
     public void Medium_05_ToListAlwaysCopies()
     {
         // Task: ToList on a list that already IS a List<int> still returns a NEW list with equal contents.
-        List<int> result = Data.Numbers.ToList(); //!
+        List<int> result = TODO;
 
         Assert.NotSame(Data.Numbers, result);
         Assert.Equal(Data.Numbers, result);
@@ -64,7 +64,7 @@ public class ToListExercises : LinqExercise
     public void Medium_06_ListsCanBeIndexedAndMutated()
     {
         // Task: the distinct words as a list; then the test adds "kiwi" to it.
-        List<string> result = Data.Words.Distinct().ToList(); //!
+        List<string> result = TODO;
 
         result.Add("kiwi");
         Assert.Equal("apple", result[0]);
@@ -78,7 +78,7 @@ public class ToListExercises : LinqExercise
         // runs exactly 10 times, not 20.
         int evaluated = 0;
 
-        List<int> materialized = Data.Numbers.Select(n => { evaluated++; return n * 2; }).ToList(); //!
+        List<int> materialized = TODO;
 
         Assert.Equal(10, materialized.Count());
         Assert.Equal(112, materialized.Sum());
@@ -91,7 +91,7 @@ public class ToListExercises : LinqExercise
     public void Hard_08_ListOfLists()
     {
         // Task: Data.Matrix as a List<List<int>>.
-        List<List<int>> result = Data.Matrix.Select(row => row.ToList()).ToList(); //!
+        List<List<int>> result = TODO;
 
         Assert.Equal(5, result[1][1]);
         Assert.Equal(3, result.Count);
@@ -101,7 +101,7 @@ public class ToListExercises : LinqExercise
     public void Hard_09_ListOfTuples()
     {
         // Task: (FirstName, Age) pairs for all students, as a list.
-        List<(string Name, int Age)> result = Data.Students.Select(s => (s.FirstName, s.Age)).ToList(); //!
+        List<(string Name, int Age)> result = TODO;
 
         Assert.Equal(("Anne", 47), result[0]);
         Assert.Equal(20, result.Count);
@@ -111,11 +111,11 @@ public class ToListExercises : LinqExercise
     public void Hard_10_ToListSurfacesErrorsImmediately()
     {
         // Task: Cast<int> over Data.MixedBag is fine to BUILD (deferred), but ToList runs it and hits the string "one".
-        IEnumerable<int> query = Data.MixedBag.Cast<int>(); //!
+        IEnumerable<int> query = TODO;
 
         Assert.Throws<InvalidCastException>(() =>
         {
-            List<int> result = query.ToList(); //!
+            List<int> result = TODO;
         });
     }
 }

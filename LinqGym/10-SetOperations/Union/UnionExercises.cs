@@ -12,7 +12,7 @@ public class UnionExercises : LinqExercise
     public void Easy_01_UnionOfTwoSets()
     {
         // Task: Data.SetA union Data.SetB.
-        IEnumerable<int> result = Data.SetA.Union(Data.SetB); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 2, 3, 4, 5, 6, 7 }, result);
     }
@@ -21,7 +21,7 @@ public class UnionExercises : LinqExercise
     public void Easy_02_UnionRemovesDuplicatesWithinASequence()
     {
         // Task: Data.SetA union Data.Empty - the duplicate 5 inside SetA disappears.
-        IEnumerable<int> result = Data.SetA.Union(Data.Empty); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 2, 3, 4, 5 }, result);
     }
@@ -30,7 +30,7 @@ public class UnionExercises : LinqExercise
     public void Easy_03_UnionWithNewWords()
     {
         // Task: Data.Words union ["kiwi", "apple"] - 9 distinct words plus kiwi.
-        IEnumerable<string> result = Data.Words.Union(new[] { "kiwi", "apple" }); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(10, result.Count());
         Assert.Equal("kiwi", result.Last());
@@ -42,7 +42,7 @@ public class UnionExercises : LinqExercise
     public void Medium_04_UnionIgnoringCase()
     {
         // Task: Data.TagsA union Data.TagsB, ignoring case.
-        IEnumerable<string> result = Data.TagsA.Union(Data.TagsB, StringComparer.OrdinalIgnoreCase); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "csharp", "LINQ", "dotnet", "azure" }, result);
     }
@@ -51,7 +51,7 @@ public class UnionExercises : LinqExercise
     public void Medium_05_UnionOfJuniorInstructors()
     {
         // Task: the junior instructors of cohort 1 union those of cohort 3 (Ids).
-        IEnumerable<int> result = Data.Cohort(1).JuniorInstructors.Union(Data.Cohort(3).JuniorInstructors).Select(i => i.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 3, 4, 6 }, result);
     }
@@ -62,7 +62,7 @@ public class UnionExercises : LinqExercise
     public void Hard_06_AllInstructorsInvolvedWithAnyCohort()
     {
         // Task: every distinct instructor who is a junior OR a primary instructor of some cohort, juniors first.
-        IEnumerable<int> result = Data.Cohorts.SelectMany(c => c.JuniorInstructors).Union(Data.Cohorts.Select(c => c.PrimaryInstructor)).Select(i => i.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 3, 5, 4, 6, 2 }, result);
     }
@@ -71,8 +71,8 @@ public class UnionExercises : LinqExercise
     public void Hard_07_UnionEqualsConcatPlusDistinct()
     {
         // Task: write SetA union SetB, and the same thing as Concat followed by Distinct. They must match.
-        IEnumerable<int> union = Data.SetA.Union(Data.SetB); //!
-        IEnumerable<int> concatDistinct = Data.SetA.Concat(Data.SetB).Distinct(); //!
+        IEnumerable<int> union = TODO;
+        IEnumerable<int> concatDistinct = TODO;
 
         Assert.Equal(union, concatDistinct);
     }

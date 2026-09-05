@@ -12,7 +12,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     public void Easy_01_EmptyBecomesSingleDefault()
     {
         // Task: Data.Empty with DefaultIfEmpty() yields exactly one element: 0.
-        IEnumerable<int> result = Data.Empty.DefaultIfEmpty(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 0 }, result);
     }
@@ -21,7 +21,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     public void Easy_02_NonEmptyIsUnchanged()
     {
         // Task: Data.Numbers with DefaultIfEmpty() is just Data.Numbers.
-        IEnumerable<int> result = Data.Numbers.DefaultIfEmpty(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(Data.Numbers, result);
     }
@@ -30,7 +30,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     public void Easy_03_CustomDefault()
     {
         // Task: Data.Empty with a default of -1.
-        IEnumerable<int> result = Data.Empty.DefaultIfEmpty(-1); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { -1 }, result);
     }
@@ -41,7 +41,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     public void Medium_04_EmptyQueryOverClassesYieldsOneNull()
     {
         // Task: students from "Paris" (none) with DefaultIfEmpty - one element, and it is null.
-        IEnumerable<Student?> result = Data.Students.Where(s => s.City == "Paris").DefaultIfEmpty(); //!
+        IEnumerable<Student?> result = TODO;
 
         Assert.Single(result);
         Assert.Null(result.First());
@@ -51,7 +51,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     public void Medium_05_SafeMaxOfAPossiblyEmptySequence()
     {
         // Task: Max() on an empty sequence throws. Use DefaultIfEmpty so the max of Data.Empty is 0 instead.
-        int result = Data.Empty.DefaultIfEmpty().Max(); //!
+        int result = TODO;
 
         Assert.Equal(0, result);
     }
@@ -63,11 +63,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     {
         // Task: one row per (Course, Enrollment) pair, but courses with NO enrollments must still appear once
         // with a null enrollment id. The classic recipe: GroupJoin -> SelectMany(group.DefaultIfEmpty()).
-        IEnumerable<(string Code, int? EnrollmentId)> result = //!{
-            Data.Courses
-                .GroupJoin(Data.Enrollments, c => c.Id, e => e.CourseId, (c, es) => (c, es))
-                .SelectMany(x => x.es.DefaultIfEmpty(), (x, e) => (x.c.Code, (int?)e?.Id));
-        //!}
+        IEnumerable<(string Code, int? EnrollmentId)> result = TODO;
 
         Assert.Equal(33, result.Count());
         Assert.Contains(("QC999", (int?)null), result);
@@ -79,7 +75,7 @@ public class DefaultIfEmptyExercises : LinqExercise
     {
         // Task: the average grade of course 7 (which has no enrollments) as 0.0 rather than an exception.
         // Treat null grades as 0 and use DefaultIfEmpty before Average.
-        double result = Data.Enrollments.Where(e => e.CourseId == 7).Select(e => e.Grade ?? 0).DefaultIfEmpty().Average(); //!
+        double result = TODO;
 
         Assert.Equal(0.0, result);
     }

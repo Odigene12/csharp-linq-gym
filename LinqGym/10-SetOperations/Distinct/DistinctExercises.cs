@@ -12,7 +12,7 @@ public class DistinctExercises : LinqExercise
     public void Easy_01_DistinctNumbers()
     {
         // Task: Data.Numbers without duplicates.
-        IEnumerable<int> result = Data.Numbers.Distinct(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 5, 3, 8, 1, 9, 2, 7, 10 }, result);
     }
@@ -21,7 +21,7 @@ public class DistinctExercises : LinqExercise
     public void Easy_02_DistinctWordsAreCaseSensitive()
     {
         // Task: Data.Words without exact duplicates ("apple" twice -> once; "APPLE" is different).
-        IEnumerable<string> result = Data.Words.Distinct(); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(9, result.Count());
     }
@@ -30,7 +30,7 @@ public class DistinctExercises : LinqExercise
     public void Easy_03_DistinctCities()
     {
         // Task: the distinct cities students live in, in first-seen order.
-        IEnumerable<string> result = Data.Students.Select(s => s.City).Distinct(); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "Nashville", "Memphis", "Knoxville", "Chattanooga" }, result);
     }
@@ -41,7 +41,7 @@ public class DistinctExercises : LinqExercise
     public void Medium_04_DistinctIgnoringCase()
     {
         // Task: Data.Words distinct with StringComparer.OrdinalIgnoreCase (first spelling wins).
-        IEnumerable<string> result = Data.Words.Distinct(StringComparer.OrdinalIgnoreCase); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "apple", "Banana", "cherry", "date", "Elderberry", "fig", "grape" }, result);
     }
@@ -53,7 +53,7 @@ public class DistinctExercises : LinqExercise
         var copy = new Student { Id = 1, FirstName = "Anne", LastName = "Appleton", Birthday = new(1978, 2, 4), Active = true, City = "Nashville", Email = null, CohortId = 1 };
         var list = new List<Student> { Data.Student(1), Data.Student(1), copy };
 
-        IEnumerable<Student> result = list.Distinct(); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(2, result.Count());
     }
@@ -62,7 +62,7 @@ public class DistinctExercises : LinqExercise
     public void Medium_06_DistinctJuniorInstructorsAcrossCohorts()
     {
         // Task: every distinct junior instructor Id across all cohorts, in first-seen order.
-        IEnumerable<int> result = Data.Cohorts.SelectMany(c => c.JuniorInstructors).Distinct().Select(i => i.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 3, 5, 4, 6 }, result);
     }
@@ -73,7 +73,7 @@ public class DistinctExercises : LinqExercise
         // Task: two StudentSummary records with identical values count as ONE distinct element.
         var summaries = new[] { new StudentSummary("A B", "X", 1), new StudentSummary("A B", "X", 1), new StudentSummary("C D", "Y", 2) };
 
-        IEnumerable<StudentSummary> result = summaries.Distinct(); //!
+        IEnumerable<StudentSummary> result = TODO;
 
         Assert.Equal(2, result.Count());
     }
@@ -88,7 +88,7 @@ public class DistinctExercises : LinqExercise
         var copy = new Student { Id = 1, FirstName = "Anne", LastName = "Appleton", Birthday = new(1978, 2, 4), Active = true, City = "Nashville", Email = null, CohortId = 1 };
         var list = new List<Student> { Data.Student(1), copy, Data.Student(2) };
 
-        IEnumerable<Student> result = list.Distinct<Student>(PersonIdComparer.Instance); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(2, result.Count());
     }
@@ -97,7 +97,7 @@ public class DistinctExercises : LinqExercise
     public void Hard_09_DistinctBirthMonths()
     {
         // Task: how many distinct birth months the students cover (nobody was born in June).
-        int result = Data.Students.Select(s => s.Birthday.Month).Distinct().Count(); //!
+        int result = TODO;
 
         Assert.Equal(11, result);
     }
@@ -108,7 +108,7 @@ public class DistinctExercises : LinqExercise
         // Task: build a Distinct query over `list`; an element added afterwards must show up.
         var list = new List<int> { 1, 1, 2 };
 
-        IEnumerable<int> query = list.Distinct(); //!
+        IEnumerable<int> query = TODO;
 
         list.Add(3);
         Assert.Equal(new[] { 1, 2, 3 }, query);

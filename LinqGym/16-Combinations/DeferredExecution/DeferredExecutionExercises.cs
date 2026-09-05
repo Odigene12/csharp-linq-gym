@@ -14,7 +14,7 @@ public class DeferredExecutionExercises : LinqExercise
         // Task: a Select that counts its calls. Enumerating the query twice runs the selector 20 times.
         int calls = 0;
 
-        IEnumerable<int> query = Data.Numbers.Select(n => { calls++; return n; }); //!
+        IEnumerable<int> query = TODO;
 
         var first = query.ToList();
         var second = query.ToList();
@@ -27,7 +27,7 @@ public class DeferredExecutionExercises : LinqExercise
         // Task: the same counting Select, but materialized once with ToList. Using the list twice costs nothing extra.
         int calls = 0;
 
-        List<int> materialized = Data.Numbers.Select(n => { calls++; return n; }).ToList(); //!
+        List<int> materialized = TODO;
 
         var first = materialized.ToList();
         var second = materialized.ToList();
@@ -41,7 +41,7 @@ public class DeferredExecutionExercises : LinqExercise
         // because the lambda captured the VARIABLE, the query uses the new value when it finally runs.
         int threshold = 5;
 
-        IEnumerable<int> query = Data.Numbers.Where(n => n > threshold); //!
+        IEnumerable<int> query = TODO;
 
         threshold = 8;
         Assert.Equal(new[] { 9, 10 }, query);
@@ -53,7 +53,7 @@ public class DeferredExecutionExercises : LinqExercise
         // Task: a query over `list` (values > 0). Adding to `list` inside the foreach invalidates the enumerator.
         var list = new List<int> { 1, 2, 3 };
 
-        IEnumerable<int> query = list.Where(n => n > 0); //!
+        IEnumerable<int> query = TODO;
 
         Assert.Throws<InvalidOperationException>(() =>
         {
@@ -67,7 +67,7 @@ public class DeferredExecutionExercises : LinqExercise
         // Task: Count() over a counting Select. By the time the next line runs, all 10 selectors have executed.
         int calls = 0;
 
-        int count = Data.Numbers.Select(n => { calls++; return n; }).Count(); //!
+        int count = TODO;
 
         Assert.Equal(10, count);
         Assert.Equal(10, calls);
@@ -78,7 +78,7 @@ public class DeferredExecutionExercises : LinqExercise
     {
         // Task: Cast<int> over Data.MixedBag. Building the query does not throw; ToList() does, because it must enumerate.
         // (Beware: Count() would NOT throw here - over an array, Cast can answer Count from the array length without looking at elements.)
-        IEnumerable<int> query = Data.MixedBag.Cast<int>(); //!
+        IEnumerable<int> query = TODO;
 
         Assert.Throws<InvalidCastException>(() => query.ToList());
     }
@@ -90,7 +90,7 @@ public class DeferredExecutionExercises : LinqExercise
         // even though Where inspects three elements (5, 3, 8) to find two matches.
         int calls = 0;
 
-        List<int> result = Data.Numbers.Where(n => n > 3).Select(n => { calls++; return n * 10; }).Take(2).ToList(); //!
+        List<int> result = TODO;
 
         Assert.Equal(new[] { 50, 80 }, result);
         Assert.Equal(2, calls);
@@ -103,7 +103,7 @@ public class DeferredExecutionExercises : LinqExercise
         // ten, so the selector runs ten times. (MinBy would have done the same job in one pass without sorting.)
         int calls = 0;
 
-        int result = Data.Numbers.Select(n => { calls++; return n; }).OrderBy(n => n).First(); //!
+        int result = TODO;
 
         Assert.Equal(1, result);
         Assert.Equal(10, calls);

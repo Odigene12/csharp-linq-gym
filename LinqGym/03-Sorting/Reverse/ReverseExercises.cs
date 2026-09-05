@@ -14,7 +14,7 @@ public class ReverseExercises : LinqExercise
     public void Easy_01_NumbersReversed()
     {
         // Task: Data.Numbers in reverse order. Data.Numbers is a List<int> - see the class comment above!
-        IEnumerable<int> result = Data.Numbers.AsEnumerable().Reverse(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10, 3, 7, 8, 2, 9, 1, 8, 3, 5 }, result);
     }
@@ -23,7 +23,7 @@ public class ReverseExercises : LinqExercise
     public void Easy_02_ReverseAString()
     {
         // Task: the string "linq" reversed. A string is an IEnumerable<char>; turn the result back into a string.
-        string result = new string("linq".Reverse().ToArray()); //!
+        string result = TODO;
 
         Assert.Equal("qnil", result);
     }
@@ -32,7 +32,7 @@ public class ReverseExercises : LinqExercise
     public void Easy_03_StudentsLastToFirst()
     {
         // Task: students in reverse order.
-        IEnumerable<Student> result = Enumerable.Reverse(Data.Students); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal("Terrence", result.First().FirstName);
         Assert.Equal("Anne", result.Last().FirstName);
@@ -45,8 +45,8 @@ public class ReverseExercises : LinqExercise
     {
         // Task: `reversed` = words ordered by Length, then reversed. `descending` = words ordered by Length descending.
         // They differ! Reversing flips the order of equal-length words too, while OrderByDescending keeps them stable.
-        IEnumerable<string> reversed = Data.Words.OrderBy(w => w.Length).Reverse(); //!
-        IEnumerable<string> descending = Data.Words.OrderByDescending(w => w.Length); //!
+        IEnumerable<string> reversed = TODO;
+        IEnumerable<string> descending = TODO;
 
         Assert.Equal(new[] { "Elderberry", "banana", "cherry", "Banana", "grape", "APPLE", "apple", "apple", "date", "fig" }, reversed);
         Assert.Equal(new[] { "Elderberry", "Banana", "cherry", "banana", "apple", "apple", "APPLE", "grape", "date", "fig" }, descending);
@@ -56,7 +56,7 @@ public class ReverseExercises : LinqExercise
     public void Medium_05_ReverseRowsAndCells()
     {
         // Task: reverse the order of the rows in Data.Matrix AND reverse each row, then flatten.
-        IEnumerable<int> result = Data.Matrix.AsEnumerable().Reverse().SelectMany(row => row.Reverse()); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 }, result);
     }
@@ -69,7 +69,7 @@ public class ReverseExercises : LinqExercise
         // Task: build a reversed query over `list` (do not materialize). The element added later must appear first.
         var list = new List<int> { 1, 2, 3 };
 
-        IEnumerable<int> query = list.AsEnumerable().Reverse(); //!
+        IEnumerable<int> query = TODO;
 
         list.Add(4);
         Assert.Equal(new[] { 4, 3, 2, 1 }, query);
@@ -79,7 +79,7 @@ public class ReverseExercises : LinqExercise
     public void Hard_07_MostRecentThreeFirst()
     {
         // Task: the last three numbers, most recent (last) first: 10, 3, 7.
-        IEnumerable<int> result = Data.Numbers.TakeLast(3).Reverse(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10, 3, 7 }, result);
     }

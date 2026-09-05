@@ -12,7 +12,7 @@ public class ContainsExercises : LinqExercise
     public void Easy_01_ContainsNine()
     {
         // Task: does Data.Numbers contain 9?
-        bool result = Data.Numbers.Contains(9); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -21,7 +21,7 @@ public class ContainsExercises : LinqExercise
     public void Easy_02_DoesNotContainFour()
     {
         // Task: does Data.Numbers contain 4?
-        bool result = Data.Numbers.Contains(4); //!
+        bool result = TODO;
 
         Assert.False(result);
     }
@@ -30,7 +30,7 @@ public class ContainsExercises : LinqExercise
     public void Easy_03_ContainsApple()
     {
         // Task: does Data.Words contain "apple"?
-        bool result = Data.Words.Contains("apple"); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -41,8 +41,8 @@ public class ContainsExercises : LinqExercise
     public void Medium_04_ContainsIsCaseSensitiveByDefault()
     {
         // Task: "APPLE" is in the list exactly, "Apple" is not.
-        bool upper = Data.Words.Contains("APPLE"); //!
-        bool mixed = Data.Words.Contains("Apple"); //!
+        bool upper = TODO;
+        bool mixed = TODO;
 
         Assert.True(upper);
         Assert.False(mixed);
@@ -52,7 +52,7 @@ public class ContainsExercises : LinqExercise
     public void Medium_05_ContainsWithACaseInsensitiveComparer()
     {
         // Task: does Data.Words contain "CHERRY" when case is ignored? Pass StringComparer.OrdinalIgnoreCase.
-        bool result = Data.Words.Contains("CHERRY", StringComparer.OrdinalIgnoreCase); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -64,8 +64,8 @@ public class ContainsExercises : LinqExercise
         // `copy` has identical data but is a different object, so Contains does NOT find it.
         var copy = new Student { Id = 3, FirstName = "Carrie", LastName = "Cooper", Birthday = new(1996, 2, 4), Active = true, City = "Memphis", Email = "carrie@example.com", CohortId = 1 };
 
-        bool original = Data.Students.Contains(Data.Student(3)); //!
-        bool duplicate = Data.Students.Contains(copy); //!
+        bool original = TODO;
+        bool duplicate = TODO;
 
         Assert.True(original);
         Assert.False(duplicate);
@@ -75,7 +75,7 @@ public class ContainsExercises : LinqExercise
     public void Medium_07_CohortsWithAGivenJuniorInstructor()
     {
         // Task: cohorts whose JuniorInstructors contain Kate Williams (Data.Instructor(1)).
-        IEnumerable<Cohort> result = Data.Cohorts.Where(c => c.JuniorInstructors.Contains(Data.Instructor(1))); //!
+        IEnumerable<Cohort> result = TODO;
 
         Assert.Equal(new[] { 1, 3 }, result.Select(c => c.Id));
     }
@@ -88,7 +88,7 @@ public class ContainsExercises : LinqExercise
         // Task: the students whose Id is in `ids` (the LINQ equivalent of SQL's WHERE Id IN (...)).
         var ids = new[] { 2, 4, 6 };
 
-        IEnumerable<Student> result = Data.Students.Where(s => ids.Contains(s.Id)); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { "Bobbie", "Derek", "Francis" }, result.Select(s => s.FirstName));
     }
@@ -99,7 +99,7 @@ public class ContainsExercises : LinqExercise
         // Task: students whose City is NOT one of the given cities.
         var cities = new[] { "Nashville", "Memphis" };
 
-        IEnumerable<Student> result = Data.Students.Where(s => !cities.Contains(s.City)); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { 5, 7, 9, 13, 15, 18, 20 }, result.Select(s => s.Id));
     }
@@ -111,7 +111,7 @@ public class ContainsExercises : LinqExercise
         // passing PersonIdComparer.Instance (see Support/Comparers.cs).
         var copy = new Student { Id = 3, FirstName = "Carrie", LastName = "Cooper", Birthday = new(1996, 2, 4), Active = true, City = "Memphis", Email = null, CohortId = 1 };
 
-        bool result = Data.Students.Contains(copy, PersonIdComparer.Instance); //!
+        bool result = TODO;
 
         Assert.True(result);
     }

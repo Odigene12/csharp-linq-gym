@@ -13,7 +13,7 @@ public class GroupJoinExercises : LinqExercise
     public void Easy_01_EnrollmentCountPerCourse()
     {
         // Task: (Code, number of enrollments) for every course - including QC999 with 0.
-        IEnumerable<(string Code, int Count)> result = Data.Courses.GroupJoin(Data.Enrollments, c => c.Id, e => e.CourseId, (c, es) => (c.Code, es.Count())); //!
+        IEnumerable<(string Code, int Count)> result = TODO;
 
         Assert.Equal(new[] { 8, 4, 5, 4, 5, 4, 0, 2 }, result.Select(r => r.Count));
     }
@@ -22,7 +22,7 @@ public class GroupJoinExercises : LinqExercise
     public void Easy_02_StudentsWithNoEnrollments()
     {
         // Task: the Ids of students whose group of enrollments is empty.
-        IEnumerable<int> result = Data.Students.GroupJoin(Data.Enrollments, s => s.Id, e => e.StudentId, (s, es) => (s.Id, es)).Where(x => !x.es.Any()).Select(x => x.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 2, 12, 17 }, result);
     }
@@ -31,7 +31,7 @@ public class GroupJoinExercises : LinqExercise
     public void Easy_03_StudentsPerCohortViaGroupJoin()
     {
         // Task: join cohorts to students on Cohort.Id == Student.CohortId and count each cohort's students.
-        IEnumerable<int> result = Data.Cohorts.GroupJoin(Data.Students, c => c.Id, s => s.CohortId, (c, ss) => ss.Count()); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 5, 5, 5, 5 }, result);
     }
@@ -42,7 +42,7 @@ public class GroupJoinExercises : LinqExercise
     public void Medium_04_CoursesPerInstructor()
     {
         // Task: (Instructor FirstName, list of course Codes). Mind the int vs int? key types.
-        IEnumerable<(string Name, List<string> Codes)> result = Data.Instructors.GroupJoin(Data.Courses, i => (int?)i.Id, c => c.InstructorId, (i, cs) => (i.FirstName, cs.Select(c => c.Code).ToList())); //!
+        IEnumerable<(string Name, List<string> Codes)> result = TODO;
 
         Assert.Equal(new[] { "CS101", "DB201" }, result.Single(r => r.Name == "Kate").Codes);
         Assert.Empty(result.Single(r => r.Name == "Terry").Codes);
@@ -53,7 +53,7 @@ public class GroupJoinExercises : LinqExercise
     {
         // Task: (Code, average Grade) per course. Averaging an empty sequence of int? gives null rather than throwing,
         // so QC999 comes out as null naturally.
-        IEnumerable<(string Code, double? Average)> result = Data.Courses.GroupJoin(Data.Enrollments, c => c.Id, e => e.CourseId, (c, es) => (c.Code, es.Average(e => e.Grade))); //!
+        IEnumerable<(string Code, double? Average)> result = TODO;
 
         Assert.Equal(79.625, result.First().Average);
         Assert.Null(result.Single(r => r.Code == "QC999").Average);
@@ -66,11 +66,7 @@ public class GroupJoinExercises : LinqExercise
     {
         // Task: flatten the GroupJoin with SelectMany + DefaultIfEmpty so that every course appears at least once:
         // (Code, EnrollmentId or null). 32 real rows plus one null row for QC999 = 33.
-        IEnumerable<(string Code, int? EnrollmentId)> result = //!{
-            Data.Courses
-                .GroupJoin(Data.Enrollments, c => c.Id, e => e.CourseId, (c, es) => (c, es))
-                .SelectMany(x => x.es.DefaultIfEmpty(), (x, e) => (x.c.Code, (int?)e?.Id));
-        //!}
+        IEnumerable<(string Code, int? EnrollmentId)> result = TODO;
 
         Assert.Equal(33, result.Count());
         Assert.Contains(("QC999", (int?)null), result);
@@ -80,7 +76,7 @@ public class GroupJoinExercises : LinqExercise
     public void Hard_07_GroupJoinWithAComparer()
     {
         // Task: for each tag in TagsA, the tags in TagsB that match ignoring case.
-        IEnumerable<(string Tag, List<string> Matches)> result = Data.TagsA.GroupJoin(Data.TagsB, a => a, b => b, (a, bs) => (a, bs.ToList()), StringComparer.OrdinalIgnoreCase); //!
+        IEnumerable<(string Tag, List<string> Matches)> result = TODO;
 
         Assert.Empty(result.ElementAt(0).Matches);
         Assert.Equal(new[] { "linq" }, result.ElementAt(1).Matches);

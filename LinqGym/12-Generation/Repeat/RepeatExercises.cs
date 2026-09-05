@@ -11,7 +11,7 @@ public class RepeatExercises : LinqExercise
     public void Easy_01_ThreeXs()
     {
         // Task: "x" three times.
-        IEnumerable<string> result = Enumerable.Repeat("x", 3); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "x", "x", "x" }, result);
     }
@@ -20,7 +20,7 @@ public class RepeatExercises : LinqExercise
     public void Easy_02_FiveZeros()
     {
         // Task: five zeros.
-        IEnumerable<int> result = Enumerable.Repeat(0, 5); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 0, 0, 0, 0, 0 }, result);
     }
@@ -29,7 +29,7 @@ public class RepeatExercises : LinqExercise
     public void Easy_03_ZeroTimesIsEmpty()
     {
         // Task: repeat anything zero times.
-        IEnumerable<string> result = Enumerable.Repeat("never", 0); //!
+        IEnumerable<string> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }
@@ -40,7 +40,7 @@ public class RepeatExercises : LinqExercise
     public void Medium_04_NumberedRows()
     {
         // Task: "Row 1", "Row 2", "Row 3" - Repeat "Row" then Select with the index.
-        IEnumerable<string> result = Enumerable.Repeat("Row", 3).Select((s, i) => $"{s} {i + 1}"); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "Row 1", "Row 2", "Row 3" }, result);
     }
@@ -49,7 +49,7 @@ public class RepeatExercises : LinqExercise
     public void Medium_05_ReferenceTypesShareOneInstance()
     {
         // Task: repeat a single new List<int> three times; every element is the very same list object.
-        List<List<int>> result = Enumerable.Repeat(new List<int>(), 3).ToList(); //!
+        List<List<int>> result = TODO;
 
         Assert.Same(result[0], result[1]);
         Assert.Same(result[1], result[2]);
@@ -63,7 +63,7 @@ public class RepeatExercises : LinqExercise
         // Task: a negative count throws ArgumentOutOfRangeException.
         Assert.Throws<ArgumentOutOfRangeException>(() =>
         {
-            IEnumerable<int> result = Enumerable.Repeat(1, -1); //!
+            IEnumerable<int> result = TODO;
         });
     }
 
@@ -71,7 +71,7 @@ public class RepeatExercises : LinqExercise
     public void Hard_07_BuildAStringOfDashes()
     {
         // Task: "-----" built from Repeat('-', 5) and string.Concat.
-        string result = string.Concat(Enumerable.Repeat('-', 5)); //!
+        string result = TODO;
 
         Assert.Equal("-----", result);
     }

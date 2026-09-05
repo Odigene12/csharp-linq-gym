@@ -11,7 +11,7 @@ public class OfTypeExercises : LinqExercise
     public void Easy_01_OnlyIntegers()
     {
         // Task: the int values inside Data.MixedBag, in order.
-        IEnumerable<int> result = Data.MixedBag.OfType<int>(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 3, 5 }, result);
     }
@@ -20,7 +20,7 @@ public class OfTypeExercises : LinqExercise
     public void Easy_02_OnlyStrings()
     {
         // Task: the string values inside Data.MixedBag.
-        IEnumerable<string> result = Data.MixedBag.OfType<string>(); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "one", "three", "five" }, result);
     }
@@ -29,7 +29,7 @@ public class OfTypeExercises : LinqExercise
     public void Easy_03_NullsAreDropped()
     {
         // Task: OfType<object>() keeps everything that is an object - which is everything except null.
-        IEnumerable<object> result = Data.MixedBag.OfType<object>(); //!
+        IEnumerable<object> result = TODO;
 
         Assert.Equal(9, result.Count());
         Assert.DoesNotContain(null, result);
@@ -41,7 +41,7 @@ public class OfTypeExercises : LinqExercise
     public void Medium_04_TypeMustMatchExactlyForValueTypes()
     {
         // Task: the long values. Note that the ints 1, 3, 5 are NOT longs - boxed value types do not convert.
-        IEnumerable<long> result = Data.MixedBag.OfType<long>(); //!
+        IEnumerable<long> result = TODO;
 
         Assert.Equal(new long[] { 4L }, result);
     }
@@ -50,7 +50,7 @@ public class OfTypeExercises : LinqExercise
     public void Medium_05_InterfacesWork()
     {
         // Task: every element that implements IComparable (int, string, double, long and bool all do).
-        IEnumerable<IComparable> result = Data.MixedBag.OfType<IComparable>(); //!
+        IEnumerable<IComparable> result = TODO;
 
         Assert.Equal(9, result.Count());
     }
@@ -63,7 +63,7 @@ public class OfTypeExercises : LinqExercise
         // Task: `people` mixes Students and Instructors (both derive from Person). Return just the Instructors.
         var people = new List<Person> { Data.Student(1), Data.Instructor(2), Data.Student(3), Data.Instructor(6) };
 
-        IEnumerable<Instructor> result = people.OfType<Instructor>(); //!
+        IEnumerable<Instructor> result = TODO;
 
         Assert.Equal(new[] { "Jurnell", "Zachary" }, result.Select(i => i.FirstName));
     }
@@ -73,7 +73,7 @@ public class OfTypeExercises : LinqExercise
     {
         // Task: from Data.MixedBag, add up every int AND every long as a single long total (1 + 3 + 4 + 5 = 13).
         // Hint: two OfType calls, Concat (or Select to long), then Sum.
-        long result = Data.MixedBag.OfType<int>().Select(i => (long)i).Concat(Data.MixedBag.OfType<long>()).Sum(); //!
+        long result = TODO;
 
         Assert.Equal(13L, result);
     }

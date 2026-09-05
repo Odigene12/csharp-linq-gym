@@ -11,7 +11,7 @@ public class IntersectExercises : LinqExercise
     public void Easy_01_CommonNumbers()
     {
         // Task: the values in both Data.SetA and Data.SetB.
-        IEnumerable<int> result = Data.SetA.Intersect(Data.SetB); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 4, 5 }, result);
     }
@@ -20,7 +20,7 @@ public class IntersectExercises : LinqExercise
     public void Easy_02_IntersectWithAnArray()
     {
         // Task: the values of Data.Numbers that are also in [3, 8, 100].
-        IEnumerable<int> result = Data.Numbers.Intersect(new[] { 3, 8, 100 }); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 3, 8 }, result);
     }
@@ -29,7 +29,7 @@ public class IntersectExercises : LinqExercise
     public void Easy_03_IntersectWithEmpty()
     {
         // Task: anything intersected with Data.Empty is empty.
-        IEnumerable<int> result = Data.Numbers.Intersect(Data.Empty); //!
+        IEnumerable<int> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }
@@ -40,7 +40,7 @@ public class IntersectExercises : LinqExercise
     public void Medium_04_IntersectIgnoringCase()
     {
         // Task: tags present in both TagsA and TagsB ignoring case (elements come from TagsA).
-        IEnumerable<string> result = Data.TagsA.Intersect(Data.TagsB, StringComparer.OrdinalIgnoreCase); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "LINQ", "dotnet" }, result);
     }
@@ -49,7 +49,7 @@ public class IntersectExercises : LinqExercise
     public void Medium_05_SharedJuniorInstructors()
     {
         // Task: junior instructors shared by cohort 1 and cohort 3 (Ids).
-        IEnumerable<int> result = Data.Cohort(1).JuniorInstructors.Intersect(Data.Cohort(3).JuniorInstructors).Select(i => i.Id); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1 }, result);
     }
@@ -60,7 +60,7 @@ public class IntersectExercises : LinqExercise
     public void Hard_06_StudentsInBothCourses()
     {
         // Task: the StudentIds enrolled in course 1 AND course 2.
-        IEnumerable<int> result = Data.Enrollments.Where(e => e.CourseId == 1).Select(e => e.StudentId).Intersect(Data.Enrollments.Where(e => e.CourseId == 2).Select(e => e.StudentId)); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 4, 16 }, result);
     }
@@ -69,7 +69,7 @@ public class IntersectExercises : LinqExercise
     public void Hard_07_CommonCharacters()
     {
         // Task: the characters that "linq" and "language" have in common.
-        IEnumerable<char> result = "linq".Intersect("language"); //!
+        IEnumerable<char> result = TODO;
 
         Assert.Equal(new[] { 'l', 'n' }, result);
     }

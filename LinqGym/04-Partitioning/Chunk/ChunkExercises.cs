@@ -11,7 +11,7 @@ public class ChunkExercises : LinqExercise
     public void Easy_01_ChunksOfThree()
     {
         // Task: Data.Numbers in chunks of 3.
-        IEnumerable<int[]> result = Data.Numbers.Chunk(3); //!
+        IEnumerable<int[]> result = TODO;
 
         Assert.Equal(4, result.Count());
         Assert.Equal(new[] { 5, 3, 8 }, result.First());
@@ -22,7 +22,7 @@ public class ChunkExercises : LinqExercise
     public void Easy_02_TwoChunksOfFive()
     {
         // Task: Data.Words in chunks of 5.
-        IEnumerable<string[]> result = Data.Words.Chunk(5); //!
+        IEnumerable<string[]> result = TODO;
 
         Assert.Equal(2, result.Count());
         Assert.All(result, chunk => Assert.Equal(5, chunk.Length));
@@ -32,7 +32,7 @@ public class ChunkExercises : LinqExercise
     public void Easy_03_ChunkLargerThanSequence()
     {
         // Task: a chunk size bigger than the sequence gives a single chunk with everything.
-        IEnumerable<int[]> result = Data.Numbers.Chunk(20); //!
+        IEnumerable<int[]> result = TODO;
 
         Assert.Single(result);
         Assert.Equal(10, result.First().Length);
@@ -46,7 +46,7 @@ public class ChunkExercises : LinqExercise
         // Task: Chunk(0) throws ArgumentOutOfRangeException immediately (argument checks are eager, not deferred).
         Assert.Throws<ArgumentOutOfRangeException>(() =>
         {
-            IEnumerable<int[]> result = Data.Numbers.Chunk(0); //!
+            IEnumerable<int[]> result = TODO;
         });
     }
 
@@ -54,7 +54,7 @@ public class ChunkExercises : LinqExercise
     public void Medium_05_SumOfEachChunk()
     {
         // Task: the sum of each chunk of 3.
-        IEnumerable<int> result = Data.Numbers.Chunk(3).Select(chunk => chunk.Sum()); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 16, 12, 18, 10 }, result);
     }
@@ -65,7 +65,7 @@ public class ChunkExercises : LinqExercise
     public void Hard_06_StudentsInGroupsOfFour()
     {
         // Task: students in groups of 4; the third group must contain students 9-12.
-        IEnumerable<Student[]> result = Data.Students.Chunk(4); //!
+        IEnumerable<Student[]> result = TODO;
 
         Assert.Equal(5, result.Count());
         Assert.Equal(new[] { 9, 10, 11, 12 }, result.ElementAt(2).Select(s => s.Id));
@@ -75,7 +75,7 @@ public class ChunkExercises : LinqExercise
     public void Hard_07_ChunkSizes()
     {
         // Task: the size of each chunk when Data.Numbers is split into chunks of 4.
-        IEnumerable<int> result = Data.Numbers.Chunk(4).Select(chunk => chunk.Length); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 4, 4, 2 }, result);
     }

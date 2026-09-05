@@ -16,7 +16,7 @@ public class AsQueryableExercises : LinqExercise
     public void Easy_01_ItIsAnIQueryable()
     {
         // Task: Data.Numbers as an IQueryable<int>.
-        IQueryable<int> result = Data.Numbers.AsQueryable(); //!
+        IQueryable<int> result = TODO;
 
         Assert.IsAssignableFrom<IQueryable<int>>(result);
     }
@@ -25,7 +25,7 @@ public class AsQueryableExercises : LinqExercise
     public void Easy_02_OperatorsBuildAnExpressionTree()
     {
         // Task: a queryable Where(n > 5); its Expression is a method-call node describing the Where, not a result.
-        IQueryable<int> result = Data.Numbers.AsQueryable().Where(n => n > 5); //!
+        IQueryable<int> result = TODO;
 
         Assert.Equal(ExpressionType.Call, result.Expression.NodeType);
     }
@@ -34,7 +34,7 @@ public class AsQueryableExercises : LinqExercise
     public void Easy_03_EnumeratingExecutesIt()
     {
         // Task: the same Where(n > 5) query, materialized.
-        List<int> result = Data.Numbers.AsQueryable().Where(n => n > 5).ToList(); //!
+        List<int> result = TODO;
 
         Assert.Equal(new[] { 8, 9, 8, 7, 10 }, result);
     }
@@ -45,7 +45,7 @@ public class AsQueryableExercises : LinqExercise
     public void Medium_04_ElementType()
     {
         // Task: ElementType of a queryable over students.
-        Type result = Data.Students.AsQueryable().ElementType; //!
+        Type result = TODO;
 
         Assert.Equal(typeof(Student), result);
     }
@@ -54,7 +54,7 @@ public class AsQueryableExercises : LinqExercise
     public void Medium_05_TheInMemoryProvider()
     {
         // Task: the Provider of an in-memory queryable is an EnumerableQuery<T>.
-        IQueryProvider result = Data.Numbers.AsQueryable().Provider; //!
+        IQueryProvider result = TODO;
 
         Assert.IsType<EnumerableQuery<int>>(result);
     }
@@ -67,7 +67,7 @@ public class AsQueryableExercises : LinqExercise
         // Task: `filter` is an Expression<Func<...>> (data describing code), not a Func. Pass it to Queryable.Where.
         Expression<Func<Student, bool>> filter = s => s.Active;
 
-        IQueryable<Student> result = Data.Students.AsQueryable().Where(filter); //!
+        IQueryable<Student> result = TODO;
 
         Assert.Equal(16, result.Count());
     }
@@ -79,7 +79,7 @@ public class AsQueryableExercises : LinqExercise
         // Each operator returns a new IQueryable whose Expression wraps the previous one.
         IQueryable<Student> query = Data.Students.AsQueryable();
 
-        string result = query.Where(s => s.Active).OrderBy(s => s.Age).Select(s => s.FirstName).First(); //!
+        string result = TODO;
 
         Assert.Equal("Carrie", result);
     }

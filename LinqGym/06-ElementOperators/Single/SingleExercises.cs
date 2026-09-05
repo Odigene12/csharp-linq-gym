@@ -12,7 +12,7 @@ public class SingleExercises : LinqExercise
     public void Easy_01_StudentWithIdSeven()
     {
         // Task: the single student whose Id is 7.
-        Student result = Data.Students.Single(s => s.Id == 7); //!
+        Student result = TODO;
 
         Assert.Equal("Gary", result.FirstName);
     }
@@ -21,7 +21,7 @@ public class SingleExercises : LinqExercise
     public void Easy_02_CohortWithThreeJuniorInstructors()
     {
         // Task: the only cohort that has exactly three junior instructors.
-        Cohort result = Data.Cohorts.Single(c => c.JuniorInstructors.Count == 3); //!
+        Cohort result = TODO;
 
         Assert.Equal(3, result.Id);
     }
@@ -30,7 +30,7 @@ public class SingleExercises : LinqExercise
     public void Easy_03_CourseWithoutInstructor()
     {
         // Task: the only course whose InstructorId is null.
-        Course result = Data.Courses.Single(c => c.InstructorId is null); //!
+        Course result = TODO;
 
         Assert.Equal("SE100", result.Code);
     }
@@ -43,7 +43,7 @@ public class SingleExercises : LinqExercise
         // Task: Single() without a predicate on a sequence that has exactly one element.
         var one = new[] { 42 };
 
-        int result = one.Single(); //!
+        int result = TODO;
 
         Assert.Equal(42, result);
     }
@@ -54,7 +54,7 @@ public class SingleExercises : LinqExercise
         // Task: ask for the Single student from Memphis. Four match, so Single must throw.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            Student result = Data.Students.Single(s => s.City == "Memphis"); //!
+            Student result = TODO;
         });
     }
 
@@ -64,7 +64,7 @@ public class SingleExercises : LinqExercise
         // Task: ask for the Single student named "Zelda". None match, so Single must throw.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            Student result = Data.Students.Single(s => s.FirstName == "Zelda"); //!
+            Student result = TODO;
         });
     }
 
@@ -74,7 +74,7 @@ public class SingleExercises : LinqExercise
         // Task: Single() with no predicate on Data.Numbers (10 elements) must throw.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            int result = Data.Numbers.Single(); //!
+            int result = TODO;
         });
     }
 
@@ -84,7 +84,7 @@ public class SingleExercises : LinqExercise
     public void Hard_08_FullTimeCohortWithAFuturisticInstructor()
     {
         // Task: the single cohort that is FullTime AND whose PrimaryInstructor was born after the year 2100.
-        Cohort result = Data.Cohorts.Single(c => c.FullTime && c.PrimaryInstructor.Birthday.Year > 2100); //!
+        Cohort result = TODO;
 
         Assert.Equal(2, result.Id);
     }
@@ -93,7 +93,7 @@ public class SingleExercises : LinqExercise
     public void Hard_09_SingleThenMemberAccess()
     {
         // Task: the LastName of the single instructor whose Specialty is "Quantum".
-        string result = Data.Instructors.Single(i => i.Specialty == "Quantum").LastName; //!
+        string result = TODO;
 
         Assert.Equal("Zohan", result);
     }
@@ -102,12 +102,12 @@ public class SingleExercises : LinqExercise
     public void Hard_10_SingleVersusFirst()
     {
         // Task: four students live in Knoxville. First happily returns the first one; Single throws.
-        Student first = Data.Students.First(s => s.City == "Knoxville"); //!
+        Student first = TODO;
         Assert.Equal("Ethel", first.FirstName);
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            Student single = Data.Students.Single(s => s.City == "Knoxville"); //!
+            Student single = TODO;
         });
     }
 }

@@ -11,7 +11,7 @@ public class LastExercises : LinqExercise
     public void Easy_01_LastNumber()
     {
         // Task: the last value in Data.Numbers.
-        int result = Data.Numbers.Last(); //!
+        int result = TODO;
 
         Assert.Equal(10, result);
     }
@@ -20,7 +20,7 @@ public class LastExercises : LinqExercise
     public void Easy_02_LastStudent()
     {
         // Task: the last student.
-        Student result = Data.Students.Last(); //!
+        Student result = TODO;
 
         Assert.Equal("Terrence", result.FirstName);
     }
@@ -29,7 +29,7 @@ public class LastExercises : LinqExercise
     public void Easy_03_LastNumberBelowFive()
     {
         // Task: the last number that is less than 5.
-        int result = Data.Numbers.Last(n => n < 5); //!
+        int result = TODO;
 
         Assert.Equal(3, result);
     }
@@ -40,7 +40,7 @@ public class LastExercises : LinqExercise
     public void Medium_04_LastInactiveStudent()
     {
         // Task: the last inactive student.
-        Student result = Data.Students.Last(s => !s.Active); //!
+        Student result = TODO;
 
         Assert.Equal("Quincy", result.FirstName);
     }
@@ -51,7 +51,7 @@ public class LastExercises : LinqExercise
         // Task: Last() on Data.Empty throws InvalidOperationException.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            int result = Data.Empty.Last(); //!
+            int result = TODO;
         });
     }
 
@@ -61,7 +61,7 @@ public class LastExercises : LinqExercise
     public void Hard_06_LastFiveLetterWord()
     {
         // Task: the last word with exactly 5 characters.
-        string result = Data.Words.Last(w => w.Length == 5); //!
+        string result = TODO;
 
         Assert.Equal("grape", result);
     }
@@ -70,7 +70,7 @@ public class LastExercises : LinqExercise
     public void Hard_07_YoungestStudentViaOrderByAndLast()
     {
         // Task: the youngest student (order by Birthday ascending, then Last).
-        Student result = Data.Students.OrderBy(s => s.Birthday).Last(); //!
+        Student result = TODO;
 
         Assert.Equal("Carrie", result.FirstName);
     }

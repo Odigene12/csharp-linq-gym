@@ -12,7 +12,7 @@ public class IndexExercises : LinqExercise
     public void Easy_01_IndexedWords()
     {
         // Task: Data.Words with their indexes.
-        IEnumerable<(int Index, string Item)> result = Data.Words.Index(); //!
+        IEnumerable<(int Index, string Item)> result = TODO;
 
         Assert.Equal((0, "apple"), result.First());
         Assert.Equal(10, result.Count());
@@ -22,7 +22,7 @@ public class IndexExercises : LinqExercise
     public void Easy_02_PositionOfFig()
     {
         // Task: the index of "fig" (Index, then First with a predicate, then .Index).
-        int result = Data.Words.Index().First(x => x.Item == "fig").Index; //!
+        int result = TODO;
 
         Assert.Equal(7, result);
     }
@@ -31,7 +31,7 @@ public class IndexExercises : LinqExercise
     public void Easy_03_AllPositionsOfEight()
     {
         // Task: every index at which the value 8 appears in Data.Numbers.
-        IEnumerable<int> result = Data.Numbers.Index().Where(x => x.Item == 8).Select(x => x.Index); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 2, 6 }, result);
     }
@@ -42,7 +42,7 @@ public class IndexExercises : LinqExercise
     public void Medium_04_FormatWithIndex()
     {
         // Task: "0:apple", "1:Banana", ...
-        IEnumerable<string> result = Data.Words.Index().Select(x => $"{x.Index}:{x.Item}"); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal("0:apple", result.First());
         Assert.Equal("9:grape", result.Last());
@@ -52,7 +52,7 @@ public class IndexExercises : LinqExercise
     public void Medium_05_WeightedSum()
     {
         // Task: the sum of (index * word length) over Data.Words.
-        int result = Data.Words.Index().Sum(x => x.Index * x.Item.Length); //!
+        int result = TODO;
 
         Assert.Equal(245, result);
     }
@@ -63,7 +63,7 @@ public class IndexExercises : LinqExercise
     public void Hard_06_PositionOfTheMaximum()
     {
         // Task: the index of the largest number (Index + MaxBy).
-        int result = Data.Numbers.Index().MaxBy(x => x.Item).Index; //!
+        int result = TODO;
 
         Assert.Equal(9, result);
     }
@@ -72,7 +72,7 @@ public class IndexExercises : LinqExercise
     public void Hard_07_ValuesEqualToTheirOneBasedPosition()
     {
         // Task: the numbers whose value equals their 1-based position in Data.Numbers.
-        IEnumerable<int> result = Data.Numbers.Index().Where(x => x.Item == x.Index + 1).Select(x => x.Item); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10 }, result);
     }

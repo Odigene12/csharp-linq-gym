@@ -11,7 +11,7 @@ public class EmptyExercises : LinqExercise
     public void Easy_01_EmptyInts()
     {
         // Task: an empty sequence of int.
-        IEnumerable<int> result = Enumerable.Empty<int>(); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(0, result.Count());
     }
@@ -22,7 +22,7 @@ public class EmptyExercises : LinqExercise
         // Task: `maybe` might be null; produce a safe sequence with ?? and Enumerable.Empty.
         string[]? maybe = null;
 
-        IEnumerable<string> result = maybe ?? Enumerable.Empty<string>(); //!
+        IEnumerable<string> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }
@@ -31,7 +31,7 @@ public class EmptyExercises : LinqExercise
     public void Easy_03_SumOfEmptyIsZero()
     {
         // Task: Sum over Enumerable.Empty<int>().
-        int result = Enumerable.Empty<int>().Sum(); //!
+        int result = TODO;
 
         Assert.Equal(0, result);
     }
@@ -42,7 +42,7 @@ public class EmptyExercises : LinqExercise
     public void Medium_04_EmptyIsASingleton()
     {
         // Task: two calls to Enumerable.Empty<int>() return the very same object (use ReferenceEquals).
-        bool result = ReferenceEquals(Enumerable.Empty<int>(), Enumerable.Empty<int>()); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -51,7 +51,7 @@ public class EmptyExercises : LinqExercise
     public void Medium_05_EmptyAsAStartingPoint()
     {
         // Task: start from Empty and Concat [1, 2] onto it.
-        IEnumerable<int> result = Enumerable.Empty<int>().Concat(new[] { 1, 2 }); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 2 }, result);
     }
@@ -62,7 +62,7 @@ public class EmptyExercises : LinqExercise
     public void Hard_06_EmptyWithDefaultIfEmpty()
     {
         // Task: Enumerable.Empty<int>() with DefaultIfEmpty(42) yields exactly [42].
-        IEnumerable<int> result = Enumerable.Empty<int>().DefaultIfEmpty(42); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 42 }, result);
     }
@@ -73,7 +73,7 @@ public class EmptyExercises : LinqExercise
         // Task: when includeArchived is false, return Enumerable.Empty<Student>(); otherwise the inactive students.
         bool includeArchived = false;
 
-        IEnumerable<Student> result = includeArchived ? Data.Students.Where(s => !s.Active) : Enumerable.Empty<Student>(); //!
+        IEnumerable<Student> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }

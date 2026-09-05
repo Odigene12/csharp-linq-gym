@@ -12,7 +12,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Easy_01_NoMatchGivesNull()
     {
         // Task: the student with Id 99 (none).
-        Student? result = Data.Students.SingleOrDefault(s => s.Id == 99); //!
+        Student? result = TODO;
 
         Assert.Null(result);
     }
@@ -21,7 +21,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Easy_02_ExactlyOneMatch()
     {
         // Task: the student with Id 5.
-        Student? result = Data.Students.SingleOrDefault(s => s.Id == 5); //!
+        Student? result = TODO;
 
         Assert.Equal("Ethel", result?.FirstName);
     }
@@ -30,7 +30,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Easy_03_EmptySequenceGivesDefault()
     {
         // Task: SingleOrDefault() on Data.Empty.
-        int result = Data.Empty.SingleOrDefault(); //!
+        int result = TODO;
 
         Assert.Equal(0, result);
     }
@@ -41,7 +41,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Medium_04_ExplicitDefaultValue()
     {
         // Task: -1 when no number is greater than 100 (overload with a default value).
-        int result = Data.Numbers.SingleOrDefault(n => n > 100, -1); //!
+        int result = TODO;
 
         Assert.Equal(-1, result);
     }
@@ -52,7 +52,7 @@ public class SingleOrDefaultExercises : LinqExercise
         // Task: SingleOrDefault for active students - 16 match, so it throws even though it is the "OrDefault" variant.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            Student? result = Data.Students.SingleOrDefault(s => s.Active); //!
+            Student? result = TODO;
         });
     }
 
@@ -60,7 +60,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Medium_06_CourseCodeLookupMiss()
     {
         // Task: the course with Code "XX999" (none).
-        Course? result = Data.Courses.SingleOrDefault(c => c.Code == "XX999"); //!
+        Course? result = TODO;
 
         Assert.Null(result);
     }
@@ -69,7 +69,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Medium_07_OnlyEnrollmentOfStudentSeven()
     {
         // Task: student 7 has exactly one enrollment - return it.
-        Enrollment? result = Data.Enrollments.SingleOrDefault(e => e.StudentId == 7); //!
+        Enrollment? result = TODO;
 
         Assert.Equal(12, result?.Id);
     }
@@ -80,7 +80,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Hard_08_NoCohortTaughtByZelda()
     {
         // Task: the cohort whose PrimaryInstructor's FirstName is "Zelda" (none).
-        Cohort? result = Data.Cohorts.SingleOrDefault(c => c.PrimaryInstructor.FirstName == "Zelda"); //!
+        Cohort? result = TODO;
 
         Assert.Null(result);
     }
@@ -89,7 +89,7 @@ public class SingleOrDefaultExercises : LinqExercise
     public void Hard_09_NullConditionalChain()
     {
         // Task: the Title of the course with Code "QC999", via SingleOrDefault(...)?.Title.
-        string? result = Data.Courses.SingleOrDefault(c => c.Code == "QC999")?.Title; //!
+        string? result = TODO;
 
         Assert.Equal("Quantum Computing", result);
     }
@@ -102,10 +102,10 @@ public class SingleOrDefaultExercises : LinqExercise
         // version using Count(...) == 1.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            List<Student> naive = Data.Students.Where(s => Data.Enrollments.SingleOrDefault(e => e.StudentId == s.Id) is not null).ToList(); //!
+            List<Student> naive = TODO;
         });
 
-        IEnumerable<Student> correct = Data.Students.Where(s => Data.Enrollments.Count(e => e.StudentId == s.Id) == 1); //!
+        IEnumerable<Student> correct = TODO;
 
         Assert.Equal(new[] { 7, 11, 15, 18 }, correct.Select(s => s.Id));
     }

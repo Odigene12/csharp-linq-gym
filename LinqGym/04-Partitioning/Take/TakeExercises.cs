@@ -11,7 +11,7 @@ public class TakeExercises : LinqExercise
     public void Easy_01_FirstThreeNumbers()
     {
         // Task: the first three values of Data.Numbers.
-        IEnumerable<int> result = Data.Numbers.Take(3); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 5, 3, 8 }, result);
     }
@@ -20,7 +20,7 @@ public class TakeExercises : LinqExercise
     public void Easy_02_FirstFiveStudentNames()
     {
         // Task: the first names of the first five students.
-        IEnumerable<string> result = Data.Students.Take(5).Select(s => s.FirstName); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "Anne", "Bobbie", "Carrie", "Derek", "Ethel" }, result);
     }
@@ -29,7 +29,7 @@ public class TakeExercises : LinqExercise
     public void Easy_03_TakeMoreThanAvailable()
     {
         // Task: ask for 100 numbers. Take never throws - you just get everything there is.
-        IEnumerable<int> result = Data.Numbers.Take(100); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(10, result.Count());
     }
@@ -40,7 +40,7 @@ public class TakeExercises : LinqExercise
     public void Medium_04_TakeZero()
     {
         // Task: Take(0) yields nothing.
-        IEnumerable<int> result = Data.Numbers.Take(0); //!
+        IEnumerable<int> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }
@@ -49,7 +49,7 @@ public class TakeExercises : LinqExercise
     public void Medium_05_TakeARange()
     {
         // Task: Take accepts a Range (.NET 6+). Return elements at positions 2, 3 and 4 with a single Take call.
-        IEnumerable<int> result = Data.Numbers.Take(2..5); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 8, 1, 9 }, result);
     }
@@ -58,7 +58,7 @@ public class TakeExercises : LinqExercise
     public void Medium_06_TakeFromTheEndWithARange()
     {
         // Task: the last three numbers using Take with a range that starts from the end (^3..).
-        IEnumerable<int> result = Data.Numbers.Take(^3..); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 7, 3, 10 }, result);
     }
@@ -67,7 +67,7 @@ public class TakeExercises : LinqExercise
     public void Medium_07_ThreeOldestStudents()
     {
         // Task: the three oldest students (order by Birthday, then Take).
-        IEnumerable<Student> result = Data.Students.OrderBy(s => s.Birthday).Take(3); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { 18, 17, 19 }, result.Select(s => s.Id));
     }
@@ -78,7 +78,7 @@ public class TakeExercises : LinqExercise
     public void Hard_08_NegativeCountIsEmpty()
     {
         // Task: Take(-1) is treated like Take(0): empty, no exception.
-        IEnumerable<int> result = Data.Numbers.Take(-1); //!
+        IEnumerable<int> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }
@@ -87,7 +87,7 @@ public class TakeExercises : LinqExercise
     public void Hard_09_SecondPageOfThree()
     {
         // Task: paging - the second page when the page size is 3 (elements at positions 3, 4, 5).
-        IEnumerable<int> result = Data.Numbers.Skip(3).Take(3); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 9, 2 }, result);
     }
@@ -99,7 +99,7 @@ public class TakeExercises : LinqExercise
         // Because everything is lazy, only two elements should ever flow through the selector.
         int evaluated = 0;
 
-        IEnumerable<int> query = Data.Numbers.Select(n => { evaluated++; return n; }).Take(2); //!
+        IEnumerable<int> query = TODO;
 
         Assert.Equal(new[] { 5, 3 }, query.ToList());
         Assert.Equal(2, evaluated);

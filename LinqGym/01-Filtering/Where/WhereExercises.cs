@@ -12,7 +12,7 @@ public class WhereExercises : LinqExercise
     public void Easy_01_ActiveStudents()
     {
         // Task: all students whose Active flag is true, in their original order.
-        IEnumerable<Student> result = Data.Students.Where(s => s.Active); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(16, result.Count());
         Assert.All(result, s => Assert.True(s.Active));
@@ -22,7 +22,7 @@ public class WhereExercises : LinqExercise
     public void Easy_02_EvenNumbers()
     {
         // Task: only the even values from Data.Numbers, keeping their order.
-        IEnumerable<int> result = Data.Numbers.Where(n => n % 2 == 0); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 8, 2, 8, 10 }, result);
     }
@@ -31,7 +31,7 @@ public class WhereExercises : LinqExercise
     public void Easy_03_StudentsFromNashville()
     {
         // Task: students whose City is exactly "Nashville".
-        IEnumerable<Student> result = Data.Students.Where(s => s.City == "Nashville"); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { 1, 2, 4, 8, 10, 12, 14, 17, 19 }, result.Select(s => s.Id));
     }
@@ -42,7 +42,7 @@ public class WhereExercises : LinqExercise
     public void Medium_04_ActiveStudentsFromMemphis()
     {
         // Task: students who are Active AND live in Memphis. Use a single Where with && (not two Where calls).
-        IEnumerable<Student> result = Data.Students.Where(s => s.Active && s.City == "Memphis"); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { "Carrie", "Francis", "Paul" }, result.Select(s => s.FirstName));
     }
@@ -51,7 +51,7 @@ public class WhereExercises : LinqExercise
     public void Medium_05_BornInThe1980s()
     {
         // Task: students born from 1980-01-01 up to and including 1989-12-31.
-        IEnumerable<Student> result = Data.Students.Where(s => s.Birthday.Year >= 1980 && s.Birthday.Year <= 1989); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { 2, 4, 6, 10, 11, 15, 16, 20 }, result.Select(s => s.Id));
     }
@@ -60,7 +60,7 @@ public class WhereExercises : LinqExercise
     public void Medium_06_StudentsWithoutEmail()
     {
         // Task: students whose Email is null. Nulls are ordinary values to Where - no special handling needed.
-        IEnumerable<Student> result = Data.Students.Where(s => s.Email is null); //!
+        IEnumerable<Student> result = TODO;
 
         Assert.Equal(new[] { "Bobbie", "Gary", "Louis", "Quincy" }, result.Select(s => s.FirstName));
     }
@@ -69,7 +69,7 @@ public class WhereExercises : LinqExercise
     public void Medium_07_WordsStartingWithLowercaseVowel()
     {
         // Task: words that start with a lowercase vowel (a, e, i, o, u). Case matters: "APPLE" must NOT be included.
-        IEnumerable<string> result = Data.Words.Where(w => "aeiou".Contains(w[0])); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(new[] { "apple", "apple" }, result);
     }
@@ -81,7 +81,7 @@ public class WhereExercises : LinqExercise
     {
         // Task: Where has an overload whose predicate receives the element AND its zero-based index.
         // Return the elements at even positions (index 0, 2, 4, ...).
-        IEnumerable<int> result = Data.Numbers.Where((n, i) => i % 2 == 0); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 5, 8, 9, 8, 3 }, result);
     }
@@ -91,7 +91,7 @@ public class WhereExercises : LinqExercise
     {
         // Task: cohorts where the PrimaryInstructor is active AND every JuniorInstructor is active.
         // Hint: a Where predicate can itself contain a LINQ call (All).
-        IEnumerable<Cohort> result = Data.Cohorts.Where(c => c.PrimaryInstructor.Active && c.JuniorInstructors.All(j => j.Active)); //!
+        IEnumerable<Cohort> result = TODO;
 
         Assert.Equal(new[] { "Evening Five", "Day Backgammon Geeks" }, result.Select(c => c.Name));
     }
@@ -104,7 +104,7 @@ public class WhereExercises : LinqExercise
         // The Assert below adds an element AFTER the query is built and expects the query to see it.
         var numbers = new List<int> { 1, 2, 3 };
 
-        IEnumerable<int> query = numbers.Where(n => n > 2); //!
+        IEnumerable<int> query = TODO;
 
         numbers.Add(10);
         Assert.Equal(new[] { 3, 10 }, query);

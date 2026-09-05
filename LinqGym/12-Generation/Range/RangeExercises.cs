@@ -12,7 +12,7 @@ public class RangeExercises : LinqExercise
     public void Easy_01_OneToFive()
     {
         // Task: the integers 1 through 5.
-        IEnumerable<int> result = Enumerable.Range(1, 5); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 2, 3, 4, 5 }, result);
     }
@@ -21,7 +21,7 @@ public class RangeExercises : LinqExercise
     public void Easy_02_ZeroCountIsEmpty()
     {
         // Task: Range with a count of 0.
-        IEnumerable<int> result = Enumerable.Range(0, 0); //!
+        IEnumerable<int> result = TODO;
 
         LinqAssert.IsEmpty(result);
     }
@@ -30,7 +30,7 @@ public class RangeExercises : LinqExercise
     public void Easy_03_StartAtTen()
     {
         // Task: three integers starting at 10.
-        IEnumerable<int> result = Enumerable.Range(10, 3); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 10, 11, 12 }, result);
     }
@@ -41,7 +41,7 @@ public class RangeExercises : LinqExercise
     public void Medium_04_SquaresOfOneToFive()
     {
         // Task: the squares 1, 4, 9, 16, 25 (Range + Select).
-        IEnumerable<int> result = Enumerable.Range(1, 5).Select(n => n * n); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { 1, 4, 9, 16, 25 }, result);
     }
@@ -50,7 +50,7 @@ public class RangeExercises : LinqExercise
     public void Medium_05_NegativeStart()
     {
         // Task: -3 through 3.
-        IEnumerable<int> result = Enumerable.Range(-3, 7); //!
+        IEnumerable<int> result = TODO;
 
         Assert.Equal(new[] { -3, -2, -1, 0, 1, 2, 3 }, result);
     }
@@ -63,7 +63,7 @@ public class RangeExercises : LinqExercise
         // Task: a negative count throws ArgumentOutOfRangeException (immediately).
         Assert.Throws<ArgumentOutOfRangeException>(() =>
         {
-            IEnumerable<int> result = Enumerable.Range(1, -1); //!
+            IEnumerable<int> result = TODO;
         });
     }
 
@@ -71,7 +71,7 @@ public class RangeExercises : LinqExercise
     public void Hard_07_FizzBuzz()
     {
         // Task: FizzBuzz for 1..15: multiples of 15 -> "FizzBuzz", of 3 -> "Fizz", of 5 -> "Buzz", otherwise the number as text.
-        IEnumerable<string> result = Enumerable.Range(1, 15).Select(n => n % 15 == 0 ? "FizzBuzz" : n % 3 == 0 ? "Fizz" : n % 5 == 0 ? "Buzz" : n.ToString()); //!
+        IEnumerable<string> result = TODO;
 
         Assert.Equal(15, result.Count());
         Assert.Equal("Fizz", result.ElementAt(2));

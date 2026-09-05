@@ -12,7 +12,7 @@ public class FirstExercises : LinqExercise
     public void Easy_01_FirstNumber()
     {
         // Task: the first value in Data.Numbers.
-        int result = Data.Numbers.First(); //!
+        int result = TODO;
 
         Assert.Equal(5, result);
     }
@@ -21,7 +21,7 @@ public class FirstExercises : LinqExercise
     public void Easy_02_FirstStudent()
     {
         // Task: the first student.
-        Student result = Data.Students.First(); //!
+        Student result = TODO;
 
         Assert.Equal("Anne", result.FirstName);
     }
@@ -30,7 +30,7 @@ public class FirstExercises : LinqExercise
     public void Easy_03_FirstNumberAboveSeven()
     {
         // Task: the first number greater than 7.
-        int result = Data.Numbers.First(n => n > 7); //!
+        int result = TODO;
 
         Assert.Equal(8, result);
     }
@@ -41,7 +41,7 @@ public class FirstExercises : LinqExercise
     public void Medium_04_FirstInactiveStudent()
     {
         // Task: the first student who is not active.
-        Student result = Data.Students.First(s => !s.Active); //!
+        Student result = TODO;
 
         Assert.Equal("Bobbie", result.FirstName);
     }
@@ -52,7 +52,7 @@ public class FirstExercises : LinqExercise
         // Task: call First() on Data.Empty. It must throw InvalidOperationException.
         Assert.Throws<InvalidOperationException>(() =>
         {
-            int result = Data.Empty.First(); //!
+            int result = TODO;
         });
     }
 
@@ -62,7 +62,7 @@ public class FirstExercises : LinqExercise
         // Task: call First with a predicate nobody satisfies (e.g. a student named "Zelda").
         Assert.Throws<InvalidOperationException>(() =>
         {
-            Student result = Data.Students.First(s => s.FirstName == "Zelda"); //!
+            Student result = TODO;
         });
     }
 
@@ -70,7 +70,7 @@ public class FirstExercises : LinqExercise
     public void Medium_07_FirstLongWord()
     {
         // Task: the first word longer than 6 characters.
-        string result = Data.Words.First(w => w.Length > 6); //!
+        string result = TODO;
 
         Assert.Equal("Elderberry", result);
     }
@@ -81,7 +81,7 @@ public class FirstExercises : LinqExercise
     public void Hard_08_OldestStudentViaOrderByAndFirst()
     {
         // Task: the oldest student (order by Birthday, then First). Compare with MinBy later in the course.
-        Student result = Data.Students.OrderBy(s => s.Birthday).First(); //!
+        Student result = TODO;
 
         Assert.Equal(18, result.Id);
     }
@@ -90,7 +90,7 @@ public class FirstExercises : LinqExercise
     public void Hard_09_FirstCohortTaughtByACSharpSpecialist()
     {
         // Task: the first cohort whose PrimaryInstructor has Specialty "C#".
-        Cohort result = Data.Cohorts.First(c => c.PrimaryInstructor.Specialty == "C#"); //!
+        Cohort result = TODO;
 
         Assert.Equal(3, result.Id);
     }
@@ -101,7 +101,7 @@ public class FirstExercises : LinqExercise
         // Task: pass Data.Numbers through a counting Select, then take First(n => n == 8). Only 3 elements should be evaluated.
         int evaluated = 0;
 
-        int result = Data.Numbers.Select(n => { evaluated++; return n; }).First(n => n == 8); //!
+        int result = TODO;
 
         Assert.Equal(8, result);
         Assert.Equal(3, evaluated);

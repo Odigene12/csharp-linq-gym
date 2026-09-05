@@ -12,7 +12,7 @@ public class CountExercises : LinqExercise
     public void Easy_01_HowManyNumbers()
     {
         // Task: the number of elements in Data.Numbers, using the LINQ method.
-        int result = Data.Numbers.Count(); //!
+        int result = TODO;
 
         Assert.Equal(10, result);
     }
@@ -21,7 +21,7 @@ public class CountExercises : LinqExercise
     public void Easy_02_HowManyActiveStudents()
     {
         // Task: how many students are Active (use the predicate overload, not Where + Count).
-        int result = Data.Students.Count(s => s.Active); //!
+        int result = TODO;
 
         Assert.Equal(16, result);
     }
@@ -30,7 +30,7 @@ public class CountExercises : LinqExercise
     public void Easy_03_CountOfEmpty()
     {
         // Task: Count() of Data.Empty.
-        int result = Data.Empty.Count(); //!
+        int result = TODO;
 
         Assert.Equal(0, result);
     }
@@ -41,7 +41,7 @@ public class CountExercises : LinqExercise
     public void Medium_04_InProgressEnrollments()
     {
         // Task: how many enrollments have no Grade yet.
-        int result = Data.Enrollments.Count(e => e.Grade is null); //!
+        int result = TODO;
 
         Assert.Equal(3, result);
     }
@@ -50,7 +50,7 @@ public class CountExercises : LinqExercise
     public void Medium_05_StudentsInNashville()
     {
         // Task: how many students live in Nashville.
-        int result = Data.Students.Count(s => s.City == "Nashville"); //!
+        int result = TODO;
 
         Assert.Equal(9, result);
     }
@@ -59,7 +59,7 @@ public class CountExercises : LinqExercise
     public void Medium_06_DistinctNumbers()
     {
         // Task: how many DIFFERENT values Data.Numbers contains.
-        int result = Data.Numbers.Distinct().Count(); //!
+        int result = TODO;
 
         Assert.Equal(8, result);
     }
@@ -68,7 +68,7 @@ public class CountExercises : LinqExercise
     public void Medium_07_CoursesTaughtByInstructorOne()
     {
         // Task: how many courses have InstructorId 1.
-        int result = Data.Courses.Count(c => c.InstructorId == 1); //!
+        int result = TODO;
 
         Assert.Equal(2, result);
     }
@@ -79,7 +79,7 @@ public class CountExercises : LinqExercise
     public void Hard_08_TotalCharactersAcrossAllWords()
     {
         // Task: the total number of characters in all of Data.Words (flatten, then count).
-        int result = Data.Words.SelectMany(w => w).Count(); //!
+        int result = TODO;
 
         Assert.Equal(55, result);
     }
@@ -88,7 +88,7 @@ public class CountExercises : LinqExercise
     public void Hard_09_ActiveStudentsPerCohort()
     {
         // Task: (CohortName, ActiveStudentCount) for every cohort.
-        IEnumerable<(string Name, int Active)> result = Data.Cohorts.Select(c => (c.Name, c.Students.Count(s => s.Active))); //!
+        IEnumerable<(string Name, int Active)> result = TODO;
 
         Assert.Equal(new[] { ("Evening Five", 4), ("Cohort of the Future", 5), ("Evening Ninja Warriors", 3), ("Day Backgammon Geeks", 4) }, result);
     }
@@ -100,7 +100,7 @@ public class CountExercises : LinqExercise
         // Unlike Any, Count must look at every element - all 10 flow through the selector.
         int evaluated = 0;
 
-        int result = Data.Numbers.Select(n => { evaluated++; return n; }).Count(n => n > 0); //!
+        int result = TODO;
 
         Assert.Equal(10, result);
         Assert.Equal(10, evaluated);

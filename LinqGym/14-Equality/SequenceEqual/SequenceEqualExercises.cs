@@ -12,7 +12,7 @@ public class SequenceEqualExercises : LinqExercise
     public void Easy_01_SameElementsSameOrder()
     {
         // Task: are [1, 2, 3] and [1, 2, 3] sequence-equal?
-        bool result = new[] { 1, 2, 3 }.SequenceEqual(new[] { 1, 2, 3 }); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -21,7 +21,7 @@ public class SequenceEqualExercises : LinqExercise
     public void Easy_02_OrderMatters()
     {
         // Task: [1, 2, 3] versus [3, 2, 1].
-        bool result = new[] { 1, 2, 3 }.SequenceEqual(new[] { 3, 2, 1 }); //!
+        bool result = TODO;
 
         Assert.False(result);
     }
@@ -30,7 +30,7 @@ public class SequenceEqualExercises : LinqExercise
     public void Easy_03_DifferentInstancesSameContent()
     {
         // Task: Data.Numbers compared with a fresh copy (ToList) of itself.
-        bool result = Data.Numbers.SequenceEqual(Data.Numbers.ToList()); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -41,7 +41,7 @@ public class SequenceEqualExercises : LinqExercise
     public void Medium_04_DifferentLengths()
     {
         // Task: [1, 2] versus [1, 2, 3].
-        bool result = new[] { 1, 2 }.SequenceEqual(new[] { 1, 2, 3 }); //!
+        bool result = TODO;
 
         Assert.False(result);
     }
@@ -50,7 +50,7 @@ public class SequenceEqualExercises : LinqExercise
     public void Medium_05_WithAComparer()
     {
         // Task: ["a", "B"] versus ["A", "b"] ignoring case.
-        bool result = new[] { "a", "B" }.SequenceEqual(new[] { "A", "b" }, StringComparer.OrdinalIgnoreCase); //!
+        bool result = TODO;
 
         Assert.True(result);
     }
@@ -65,8 +65,8 @@ public class SequenceEqualExercises : LinqExercise
         var records2 = new[] { new StudentSummary("A", "X", 1) };
         var copy = new Student { Id = 1, FirstName = "Anne", LastName = "Appleton", Birthday = new(1978, 2, 4), Active = true, City = "Nashville", Email = null, CohortId = 1 };
 
-        bool recordsEqual = records1.SequenceEqual(records2); //!
-        bool classesEqual = new[] { Data.Student(1) }.SequenceEqual(new[] { copy }); //!
+        bool recordsEqual = TODO;
+        bool classesEqual = TODO;
 
         Assert.True(recordsEqual);
         Assert.False(classesEqual);
@@ -76,7 +76,7 @@ public class SequenceEqualExercises : LinqExercise
     public void Hard_07_IsItSorted()
     {
         // Task: "is Data.Numbers already sorted?" = does it SequenceEqual its own sorted version? (No.)
-        bool result = Data.Numbers.SequenceEqual(Data.Numbers.Order()); //!
+        bool result = TODO;
 
         Assert.False(result);
     }
