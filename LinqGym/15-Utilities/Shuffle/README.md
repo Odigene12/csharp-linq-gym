@@ -9,8 +9,9 @@
 
 ## What it does
 
-`Shuffle()` yields the elements in a uniformly random order (Fisher-Yates using `Random.Shared`). The
-pre-.NET-10 idiom was `OrderBy(_ => Random.Shared.Next())`, which is slower and subtly biased.
+`Shuffle()` yields the elements in a random order. The pre-.NET-10 idiom was
+`OrderBy(_ => Random.Shared.Next())`, which is slower and, because the comparison keys can collide, not
+uniformly random.
 
 ## Signature
 
@@ -22,7 +23,7 @@ IEnumerable<T> Shuffle<T>(this IEnumerable<T> source);
 
 - **Deferred, buffering.** The whole source is read, shuffled, then yielded. Each enumeration reshuffles.
 - The source is not modified.
-- `Shuffle().Take(n)` is an efficient random sample; the runtime samples without shuffling everything.
+- `Shuffle().Take(n)` is the idiomatic random sample of n elements.
 
 ## Watch out for
 

@@ -112,12 +112,14 @@ Try for ten minutes first. The reference answers are one good way, not the only 
 Repetition is the point. Reset one method or everything:
 
 ```bash
-tools/reset-exercises.sh              # all
-tools/reset-exercises.sh Aggregate    # just Aggregate
+tools/reset-exercises.sh              # all 82 exercise files
+tools/reset-exercises.sh Aggregate    # just the Aggregate exercises
+tools/reset-exercises.sh 07-Agg       # everything under 07-Aggregation
 ```
 
-(`powershell -File tools/Reset-Exercises.ps1 -Only Aggregate` on Windows.) Or keep each attempt on its own
-branch - `git switch -c attempt-2 main` - and diff attempts against each other later.
+On Windows: `powershell -File tools/Reset-Exercises.ps1 -Only Aggregate`. Both scripts touch only
+`*Exercises.cs`, so notes you write into a README survive a reset. Or keep each attempt on its own branch -
+`git switch -c attempt-2 main` - and diff attempts against each other later.
 
 ## What you will be able to do afterwards
 

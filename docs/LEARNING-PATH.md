@@ -40,10 +40,12 @@ Skills fade. To go again:
 ```bash
 tools/reset-exercises.sh            # everything
 tools/reset-exercises.sh Aggregate  # one method
+tools/reset-exercises.sh 07-Agg     # one category
 ```
 
-or on Windows `powershell -File tools/Reset-Exercises.ps1 -Only Aggregate`. Better still, work on a branch
-per attempt (`git switch -c attempt-2 main`) so you can diff attempts against each other.
+or on Windows `powershell -File tools/Reset-Exercises.ps1 -Only Aggregate`. Only `*Exercises.cs` is
+restored, so any notes you added to a README stay put. Better still, work on a branch per attempt
+(`git switch -c attempt-2 main`) so you can diff attempts against each other.
 
 ## What "done" looks like
 

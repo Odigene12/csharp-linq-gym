@@ -27,7 +27,7 @@ IEnumerable<T> Reverse<T>(this IEnumerable<T> source);
 ## Watch out for
 
 - **`List<T>.Reverse()` is a different method.** It is an instance method that reverses the list *in place* and returns `void`. Calling `.Reverse()` directly on a `List<T>` picks that one, so `IEnumerable<int> r = list.Reverse();` does not compile. Write `list.AsEnumerable().Reverse()` or `Enumerable.Reverse(list)`.
-- Arrays are safe on .NET 10 (`array.Reverse()` binds to LINQ), but `Array.Reverse(array)` - the static one - is in-place.
+- Arrays are fine: they have no instance `Reverse()`, so `array.Reverse()` binds to LINQ and returns a new sequence. Beware the static `Array.Reverse(array)`, which reverses in place and returns `void`.
 
 ## Compare with
 

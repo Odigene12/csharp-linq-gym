@@ -21,7 +21,7 @@ static IEnumerable<T> InfiniteSequence<T>(T start, T step) where T : IAdditionOp
 
 ## How it behaves
 
-- **Deferred**, streaming, truly infinite (integer types wrap around on overflow).
+- **Deferred** and streaming. It never ends on its own, so the operator you put after it is what stops the query.
 - A cleaner counter than `Range(0, int.MaxValue)` for numbering or generating candidates until a condition is met.
 
 ## Watch out for

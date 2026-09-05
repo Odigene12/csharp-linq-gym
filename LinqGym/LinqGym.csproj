@@ -7,7 +7,13 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <RootNamespace>LinqGym</RootNamespace>
-    <!-- Exercises intentionally leave some locals unused; keep the build quiet. -->
+    <!--
+      Exercise files trip analyzers on purpose, so these are suppressed rather than worked around:
+      CS0219  a solution is assigned to a local the test then only inspects indirectly
+      CS86xx  nullable warnings from exercises that deliberately study null handling
+      xUnit2013/2017/2029/2030/2031  Assert.Equal(n, x.Count()) / Assert.Contains style, kept because
+              the LINQ call being asserted on IS the lesson (Assert.Single would hide it)
+    -->
     <NoWarn>$(NoWarn);CS0219;CS8600;CS8602;CS8604;CS8620;xUnit2013;xUnit2017;xUnit2029;xUnit2030;xUnit2031</NoWarn>
   </PropertyGroup>
 

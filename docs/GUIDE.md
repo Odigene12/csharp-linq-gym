@@ -96,7 +96,7 @@ executed yet?* Every exercise in this repo declares the result type explicitly f
 
 ## Performance rules of thumb
 
-1. `Any()` not `Count() > 0`.
+1. `Any()` not `Count() > 0` over a query - but `.Count`/`.Length` (the property) not `Any()` over a collection you already hold.
 2. Filter before you sort; sort once.
 3. `MinBy`/`MaxBy` instead of sort + first.
 4. Build a `HashSet`/`Dictionary`/`Lookup` once instead of `Contains`/`First` inside a loop.

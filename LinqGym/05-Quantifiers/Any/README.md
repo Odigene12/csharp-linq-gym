@@ -28,7 +28,8 @@ bool Any<T>(this IEnumerable<T> source, Func<T, bool> predicate);
 
 ## Watch out for
 
-- `Count() > 0` walks the entire sequence to answer a yes/no question; `Any()` stops at the first element. Analyzers flag this (CA1860 / CA1827).
+- `Count() > 0` walks the entire sequence to answer a yes/no question; `Any()` stops at the first element. Analyzer CA1827 flags it.
+- The reverse holds for a *collection*: `list.Count > 0` (the property) beats `list.Any()`, because it never allocates an enumerator. Analyzer CA1860 flags `Any()` there. So: `Any()` over a query, `.Count`/`.Length` over a collection you are already holding.
 - `Any(pred)` is `Where(pred).Any()` - write the short form.
 - `!Any(p)` is `All(!p)`; pick whichever reads naturally.
 
