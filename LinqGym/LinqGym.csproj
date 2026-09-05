@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>LinqGym</RootNamespace>
+    <!-- Exercises intentionally leave some locals unused; keep the build quiet. -->
+    <NoWarn>$(NoWarn);CS0219;CS8600;CS8602;CS8604;CS8620;xUnit2013;xUnit2017;xUnit2029;xUnit2030;xUnit2031</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="LinqGym.Data" />
+    <Using Include="LinqGym.Support" />
+  </ItemGroup>
+
+</Project>

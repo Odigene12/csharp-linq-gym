@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main, solutions]
+  pull_request:
+    branches: [main, solutions]
+
+jobs:
+  build:
+    name: Build (${{ github.ref_name }})
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet build --nologo -warnaserror
+
+  # On main every test fails by design (they are exercises), so tests only run on the solutions branch.
+  test-solutions:
+    name: Verify reference solutions
+    if: github.ref_name == 'solutions' || github.base_ref == 'solutions'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet test --nologo
+
+  # On main, make sure the generator left no solutions behind and every test fails with NotImplementedException.
+  verify-placeholders:
+    name: Verify main has only TODOs
+    if: github.ref_name == 'main' || github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: No solution markers may remain
+        run: |
+          if grep -rn --include='*Exercises.cs' '//!' LinqGym; then
+            echo 'Solution markers found on main - run tools/Make-StudentVersion.ps1'; exit 1
+          fi
+      - name: Every exercise must fail with NotImplementedException
+        run: |
+          dotnet test --nologo --logger 'trx;LogFileName=results.trx' || true
+          total=$(grep -o 'total="[0-9]*"' LinqGym/TestResults/results.trx | head -1 | grep -o '[0-9]*')
+          nie=$(grep -c 'NotImplementedException' LinqGym/TestResults/results.trx)
+          echo "total=$total notImplemented=$nie"
+          test "$total" -gt 0 && test "$nie" -ge "$total"
